@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="5dp"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/quiz_title"
+                android:textSize="26dp"
+                android:textStyle="bold"
+                />
+
+        </LinearLayout>
+
+        <!-- Nome ao contrário -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="15dp"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/quiz_label_name"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/quiz_name"
+                />
+
+        </LinearLayout>
+
+        <!-- Onde Dormir -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="15dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/quiz_label_sleep"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:id="@+id/quiz_sleep">
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/quiz_sleep_option_bed"
+                    android:layout_marginRight="10dp"
+                    android:id="@+id/quiz_sleep_option_bed"
+                    />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/quiz_sleep_option_sofa"
+                    android:layout_marginRight="10dp"
+                    android:id="@+id/quiz_sleep_option_sofa"
+                    />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/quiz_sleep_option_office"
+                    android:layout_marginRight="10dp"
+                    android:id="@+id/quiz_sleep_option_office"
+                    />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/quiz_sleep_option_bus"
+                    android:layout_marginRight="10dp"
+                    android:id="@+id/quiz_sleep_option_bus"
+                    />
+
+            </RadioGroup>
+
+
+        </LinearLayout>
+
+        <!-- O que comer -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="15dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/quiz_label_food"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/quiz_food_popcorn"
+                    android:id="@+id/quiz_food_popcorn"
+                    />
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/quiz_food_pizza"
+                    android:id="@+id/quiz_food_pizza"
+                    />
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/quiz_food_lanch"
+                    android:id="@+id/quiz_food_lanch"
+                    />
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/quiz_food_chocolate"
+                    android:id="@+id/quiz_food_chocolate"
+                    />
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/quiz_food_caviar"
+                    android:id="@+id/quiz_food_caviar"
+                    />
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/quiz_food_fries"
+                    android:id="@+id/quiz_food_fries"
+                    />
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/quiz_food_scoobySnack"
+                    android:id="@+id/quiz_food_scoobySnack"
+                    />
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/quiz_food_none"
+                    android:id="@+id/quiz_food_none"
+                    />
+
+            </LinearLayout>
+
+
+
+
+        </LinearLayout>
+
+        <!-- Pior coisa em uma série -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="15dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/quiz_label_worst_final"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                />
+
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/quiz_worst_final"
+                android:entries="@array/finais"/>
+
+        </LinearLayout>
+
+        <!-- Signo -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="15dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/quiz_label_signo"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                />
+
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/quiz_signo"
+                android:entries="@array/signo"/>
+
+        </LinearLayout>
+
+        <!-- Estalo do Thanos -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="15dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/quiz_label_thanos"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:id="@+id/quiz_thanos">
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/quiz_thanos_option_yes"
+                    android:id="@+id/quiz_thanos_option_yes"
+                    android:layout_marginRight="10dp"
+                    />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/quiz_thanos_option_no"
+                    android:id="@+id/quiz_thanos_option_no"
+                    android:layout_marginRight="10dp"
+                    />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/quiz_thanos_option_who"
+                    android:id="@+id/quiz_thanos_option_who"
+                    android:layout_marginRight="10dp"
+                    />
+
+            </RadioGroup>
+
+
+        </LinearLayout>
+
+        <!-- Tipo de Cozinheiro -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="15dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/quiz_label_cooker"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:id="@+id/quiz_cooker">
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/quiz_cooker_option_entrada"
+                    android:id="@+id/quiz_cooker_option_entrada"
+                    android:layout_marginRight="10dp"
+                    />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/quiz_cooker_option_churras"
+                    android:id="@+id/quiz_cooker_option_churras"
+                    android:layout_marginRight="10dp"
+                    />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/quiz_cooker_option_miojo"
+                    android:id="@+id/quiz_cooker_option_miojo"
+                    android:layout_marginRight="10dp"
+                    />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/quiz_cooker_option_confeiteiro"
+                    android:id="@+id/quiz_cooker_option_confeiteiro"
+                    android:layout_marginRight="10dp"
+                    />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/quiz_cooker_option_se_acha"
+                    android:id="@+id/quiz_cooker_option_se_acha"
+                    android:layout_marginRight="10dp"
+                    />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/quiz_cooker_option_masterchef"
+                    android:id="@+id/quiz_cooker_option_masterchef"
+                    android:layout_marginRight="10dp"
+                    />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/quiz_cooker_option_nada"
+                    android:id="@+id/quiz_cooker_option_nada"
+                    android:layout_marginRight="10dp"
+                    />
+
+            </RadioGroup>
+
+
+        </LinearLayout>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/quiz_submit"
+            android:id="@+id/quiz_submit"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:textColor="@color/cardview_light_background"
+            android:background="@color/colorPrimary"
+            />
+
+    </LinearLayout>
+
+</ScrollView>
