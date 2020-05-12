@@ -48,4 +48,5 @@
     <string name="quiz_thanos_option_who">Quem é Thanos</string>
     <string name="quiz_submit">Enviar</string>
     <string name="menu_series">Series</string>
+    <string name="series_search_hint">Buscar ...</string>
 </resources>

@@ -19,7 +19,6 @@ public class SerieAdaptor extends RecyclerView.Adapter {
         this.series = series;
     }
 
-
     @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -38,5 +37,9 @@ public class SerieAdaptor extends RecyclerView.Adapter {
     @Override
     public int getItemCount() {
         return series.size();
+    }
+
+    public void setSeries(ArrayList<Serie> series) {
+        this.series = series;
     }
 }

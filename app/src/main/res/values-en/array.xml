@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="signo">
+        <item>Aries.</item>
+        <item>Taurus.</item>
+        <item>Gemini.</item>
+        <item>Cancer.</item>
+        <item>Leo.</item>
+        <item>Virgo.</item>
+        <item>Libra.</item>
+        <item>Scorpio.</item>
+        <item>Sagittarius.</item>
+        <item>Capricorn.</item>
+        <item>Aquarius.</item>
+        <item>Pisces.</item>
+
+    </string-array>
+
+    <string-array name="finais">
+        <item>It's just a fream </item>
+        <item>Everyone has died... from nothing.</item>
+        <item>to continue... (bazinga).</item>
+        <item>That couple ends up together at the end.</item>
+        <item>There is no bad ends, just bad people.</item>
+
+    </string-array>
+
+    <array name="fotos">
+        <item>@drawable/arrow</item>
+        <item>@drawable/batwoman</item>
+        <item>@drawable/defenders</item>
+        <item>@drawable/punho_de_ferro</item>
+        <item>@drawable/riverdale</item>
+        <item>@drawable/supergirl</item>
+        <item>@drawable/supernatural</item>
+        <item>@drawable/the_big_bang_theory</item>
+        <item>@drawable/the_flash</item>
+        <item>@drawable/titans</item>
+
+    </array>
+
+    <string-array name="series">
+        <item>Arrow, 3.5</item>
+        <item>Batwoman, 4</item>
+        <item>Defenders, 4</item>
+        <item>Punho de Ferro, 5</item>
+        <item>Riverdale, 5</item>
+        <item>Supergirl, 3</item>
+        <item>Supernatural, 6</item>
+        <item>The Big Bang Theory, 5</item>
+        <item>The Flash, 3</item>
+        <item>Titans, 4</item>
+    </string-array>
+</resources>

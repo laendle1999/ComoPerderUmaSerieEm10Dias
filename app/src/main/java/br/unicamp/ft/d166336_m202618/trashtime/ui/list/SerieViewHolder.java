@@ -34,6 +34,8 @@ public class SerieViewHolder extends RecyclerView.ViewHolder {
 
         name.setText(serie.getName());
 
+        grade.removeAllViews();
+
         for (int i = 1; i <= serie.getGrade(); i++) {
             ImageView imageView = new ImageView(itemView.getContext());
 

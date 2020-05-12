@@ -3,6 +3,8 @@ package br.unicamp.ft.d166336_m202618.trashtime.ui.list;
 import android.content.Context;
 import android.content.res.TypedArray;
 
+import java.util.ArrayList;
+
 import br.unicamp.ft.d166336_m202618.trashtime.R;
 
 public class Serie {
@@ -61,5 +63,32 @@ public class Serie {
         }
 
         return series;
+    }
+
+    public static Serie[] search (Context context, String search) {
+        if (context == null) {
+            return null;
+        }
+
+        String[] infos = context.getResources().getStringArray(R.array.series);
+        TypedArray fotos = context.getResources().obtainTypedArray(R.array.fotos);
+
+        ArrayList<Serie> series = new ArrayList<>();
+
+        for (int i = 0; i < infos.length; i++){
+            String[] info = infos[i].split(",");
+
+            if (info[0].contains(search)){
+                series.add (
+                        new Serie(
+                            fotos.getResourceId(i, 0),
+                            info[0],
+                            Float.parseFloat(info[1]))
+                );
+
+            }
+        }
+
+        return series.toArray(new Serie[series.size()]);
     }
 }
