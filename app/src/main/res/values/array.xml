@@ -51,4 +51,24 @@
         <item>The Flash, 3</item>
         <item>Titans, 4</item>
     </string-array>
+
+    <string-array name="quiz_result_titles">
+        <item>Fingido</item>
+        <item>Exponho mesmo</item>
+        <item>Mente para você mesmo.</item>
+    </string-array>
+
+    <string-array name="quiz_result_texts">
+        <item>Você adora assistir aquela série ruim, mas esconde de todo mundo.
+Quando alguém pergunta daquele seu "guilty pleasure", você já vai logo se fazendo de desentendido e mudando de assunto.
+Mas tudo bem, um dia você cansa de esconder e expõe seu gosto duvidoso para todo mundo.</item>
+        <item>Você ama aquela série ruim e quer que todo mundo saiba!
+Você sabe que a série é trash, mas isso só faz com que você aprecie ainda mais essa obra de arte em que tudo pode acontecer.
+(menos ter coerência, desse detalhe essas séries não precisam).</item>
+        <item>Você não consegue admitir nem para você mesmo que AMA aquela série ruim.
+Está sempre desdenhando da série e até mesmo briga com outras pessoas que gostam do programa, mas secretamente você não perde um episódio
+e ta sempre procurando coisas sobre a mesma.
+Aceite o seu gosto duvidoso e venha para o lado lixo da tv.</item>
+    </string-array>
+
 </resources>

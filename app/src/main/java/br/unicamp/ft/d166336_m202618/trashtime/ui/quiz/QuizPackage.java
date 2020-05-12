@@ -76,8 +76,21 @@ public class QuizPackage implements Serializable {
         this.signo = signo;
     }
 
-    public List<String> getFood() {
-        return food;
+    //public List<String> getFood() {
+    // return food;
+    //}
+
+    public String getFood() {
+        String finalStr = "";
+        for (String str : food) {
+            if (finalStr.trim().isEmpty()) {
+                finalStr = str;
+            } else {
+                finalStr = finalStr + ", " + str;
+            }
+        }
+
+        return finalStr;
     }
 
     public void setFood(List<String> food) {
@@ -85,6 +98,7 @@ public class QuizPackage implements Serializable {
     }
 
     public int getResult() {
+
         return result;
     }
 }
