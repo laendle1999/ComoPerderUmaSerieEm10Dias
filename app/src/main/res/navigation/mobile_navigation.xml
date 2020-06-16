@@ -2,7 +2,6 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/mobile_navigation"
     app:startDestination="@+id/nav_home">
 
     <fragment
@@ -52,11 +51,16 @@
     <fragment
         android:id="@+id/nav_series"
         android:name="br.unicamp.ft.d166336_m202618.trashtime.ui.list.SerieFragment"
-        android:label="fragment_serie"
+        android:label="@string/menu_series"
         tools:layout="@layout/fragment_serie" />
     <fragment
         android:id="@+id/nav_tranding"
         android:name="br.unicamp.ft.d166336_m202618.trashtime.ui.tranding.TrandingFragment"
-        android:label="fragment_tranding"
+        android:label="@string/menu_tranding"
         tools:layout="@layout/fragment_tranding" />
+    <fragment
+        android:id="@+id/nav_search"
+        android:name="br.unicamp.ft.d166336_m202618.trashtime.ui.search.SearchFragment"
+        android:label="@string/menu_search"
+        tools:layout="@layout/fragment_search" />
 </navigation>

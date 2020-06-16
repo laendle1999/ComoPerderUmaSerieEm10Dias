@@ -6,18 +6,17 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 
 import br.unicamp.ft.d166336_m202618.trashtime.R;
+import br.unicamp.ft.d166336_m202618.trashtime.models.Serie;
 
 /**
  * A simple {@link Fragment} subclass.

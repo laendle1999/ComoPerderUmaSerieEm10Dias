@@ -1,4 +1,4 @@
-package br.unicamp.ft.d166336_m202618.trashtime.ui.list;
+package br.unicamp.ft.d166336_m202618.trashtime.ui.search;
 
 import android.view.View;
 import android.widget.ImageView;
@@ -8,17 +8,20 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.squareup.picasso.Picasso;
+
 import br.unicamp.ft.d166336_m202618.trashtime.R;
 import br.unicamp.ft.d166336_m202618.trashtime.models.Serie;
+import br.unicamp.ft.d166336_m202618.trashtime.models.SerieList;
 
-public class SerieViewHolder extends RecyclerView.ViewHolder {
+public class SearchViewHolder extends RecyclerView.ViewHolder {
 
     private ImageView image;
     private TextView name;
     private LinearLayout grade;
     private View itemView;
 
-    public SerieViewHolder(@NonNull View itemView) {
+    public SearchViewHolder(@NonNull View itemView) {
         super(itemView);
 
         this.itemView = itemView;
@@ -30,14 +33,18 @@ public class SerieViewHolder extends RecyclerView.ViewHolder {
         grade = itemView.findViewById(R.id.grade_linear_layout);
     }
 
-    public void bind (Serie serie) {
-        image.setImageResource(serie.getFoto());
+    public void bind (SerieList serie) {
+        //image.setImageResource();
+
+        Picasso.with(itemView.getContext()).load(serie.getImage()).into(image);
 
         name.setText(serie.getName());
 
         grade.removeAllViews();
 
-        for (int i = 1; i <= serie.getGrade(); i++) {
+        float serie_grade = serie.getGrade() / 2;
+
+        for (int i = 1; i <= serie_grade; i++) {
             ImageView imageView = new ImageView(itemView.getContext());
 
             imageView.setAdjustViewBounds(true);
@@ -51,7 +58,7 @@ public class SerieViewHolder extends RecyclerView.ViewHolder {
             grade.addView(imageView);
         }
 
-        if (serie.getGrade() % 1.0 != 0) {
+        if (serie_grade % 1.0 != 0) {
             ImageView imageView = new ImageView(itemView.getContext());
 
             imageView.setAdjustViewBounds(true);

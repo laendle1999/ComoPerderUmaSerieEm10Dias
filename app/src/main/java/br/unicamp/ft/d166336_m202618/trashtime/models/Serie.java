@@ -1,4 +1,4 @@
-package br.unicamp.ft.d166336_m202618.trashtime.ui.list;
+package br.unicamp.ft.d166336_m202618.trashtime.models;
 
 import android.content.Context;
 import android.content.res.TypedArray;

@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 import br.unicamp.ft.d166336_m202618.trashtime.R;
+import br.unicamp.ft.d166336_m202618.trashtime.models.Serie;
 
 public class SerieAdaptor extends RecyclerView.Adapter {
 
