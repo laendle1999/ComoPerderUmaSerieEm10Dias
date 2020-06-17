@@ -40,7 +40,7 @@ public class SearchFragment extends Fragment implements JsonReciver {
 
 
     public SearchFragment() {
-        tmdbService = new TmdbService("https://api.themoviedb.org/3",
+        tmdbService = new TmdbService("http://api.themoviedb.org/3",
                 "5472dbfc461c85f5a29197d9c1fef7d5",
                 "pt-br",
                 SearchFragment.this
@@ -67,10 +67,12 @@ public class SearchFragment extends Fragment implements JsonReciver {
 
                 String search = editText.getText().toString();
 
-                if (search.length() >= 6) {
+                if (search.length() >= 3) {
 
                     progressDialog.setMessage("Loading...");
                     progressDialog.show();
+
+                    searchAdaptor.cleanSeries();
 
                     tmdbService.search(search);
                 }

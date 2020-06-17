@@ -3,17 +3,11 @@ package br.unicamp.ft.d166336_m202618.trashtime.services;
 import android.os.AsyncTask;
 import android.util.Log;
 
-import com.google.gson.Gson;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
-
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
@@ -33,7 +27,6 @@ public class ReciveJson extends AsyncTask<String, Void, String> {
 
         try {
             URL url = new URL(strings[0]);
-            //URL url = new URL(url_text);
 
             HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
 
@@ -51,16 +44,10 @@ public class ReciveJson extends AsyncTask<String, Void, String> {
 
             String line;
 
-            line = reader.readLine();
-
-            Log.i("testandoew", "dasds");
-
-
             while ((line = reader.readLine()) != null) {
+
                 stringBuilder.append(line);
             }
-            Log.i("testando", "");
-            Log.i("testando", stringBuilder.toString());
 
             return stringBuilder.toString();
 

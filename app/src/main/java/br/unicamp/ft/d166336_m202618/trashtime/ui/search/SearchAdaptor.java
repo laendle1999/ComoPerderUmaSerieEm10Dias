@@ -63,6 +63,10 @@ public class SearchAdaptor extends RecyclerView.Adapter {
         return 0;
     }
 
+    public void cleanSeries() {
+        series = new ArrayList<>();
+    }
+
     public void setSeries(JSONObject jsonObject) {
 
         JSONArray array = null;

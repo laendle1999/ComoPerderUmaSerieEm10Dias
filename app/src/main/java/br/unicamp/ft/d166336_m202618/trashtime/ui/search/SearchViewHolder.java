@@ -34,7 +34,6 @@ public class SearchViewHolder extends RecyclerView.ViewHolder {
     }
 
     public void bind (SerieList serie) {
-        //image.setImageResource();
 
         Picasso.with(itemView.getContext()).load(serie.getImage()).into(image);
 
@@ -44,7 +43,9 @@ public class SearchViewHolder extends RecyclerView.ViewHolder {
 
         float serie_grade = serie.getGrade() / 2;
 
-        for (int i = 1; i <= serie_grade; i++) {
+        float our_grade = 5 - serie_grade;
+
+        for (int i = 1; i <= our_grade; i++) {
             ImageView imageView = new ImageView(itemView.getContext());
 
             imageView.setAdjustViewBounds(true);
@@ -58,7 +59,7 @@ public class SearchViewHolder extends RecyclerView.ViewHolder {
             grade.addView(imageView);
         }
 
-        if (serie_grade % 1.0 != 0) {
+        if (our_grade % 1.0 != 0) {
             ImageView imageView = new ImageView(itemView.getContext());
 
             imageView.setAdjustViewBounds(true);
