@@ -14,10 +14,10 @@ import br.unicamp.ft.d166336_m202618.trashtime.models.Serie;
 
 public class SerieAdaptor extends RecyclerView.Adapter {
 
-    private ArrayList<Serie> series;
-
+    private ArrayList<Serie> list_series;
+    private ArrayList<Serie> all_series;
     public SerieAdaptor(ArrayList<Serie> series) {
-        this.series = series;
+        this.list_series = series;
     }
 
     @NonNull
@@ -32,15 +32,37 @@ public class SerieAdaptor extends RecyclerView.Adapter {
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
-        ((SerieViewHolder)holder).bind(series.get(position));
+        ((SerieViewHolder)holder).bind(list_series.get(position));
     }
 
     @Override
     public int getItemCount() {
-        return series.size();
+        return list_series.size();
     }
 
-    public void setSeries(ArrayList<Serie> series) {
-        this.series = series;
+    public void search (String words) {
+        if (all_series == null) {
+            all_series = list_series;
+        }
+
+        list_series = new ArrayList<>();
+
+        for(Serie serie : all_series) {
+            if (serie.getName().toLowerCase().contains(words.toLowerCase())) {
+                list_series.add(serie);
+            }
+        }
+
+        notifyDataSetChanged();
+    }
+
+    public void originalDataSet () {
+        list_series = all_series;
+
+        notifyDataSetChanged();
+    }
+
+    public void setList_series(ArrayList<Serie> list_series) {
+        this.list_series = list_series;
     }
 }

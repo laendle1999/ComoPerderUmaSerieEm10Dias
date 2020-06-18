@@ -8,6 +8,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.squareup.picasso.Picasso;
+
 import br.unicamp.ft.d166336_m202618.trashtime.R;
 import br.unicamp.ft.d166336_m202618.trashtime.models.Serie;
 
@@ -31,7 +33,7 @@ public class SerieViewHolder extends RecyclerView.ViewHolder {
     }
 
     public void bind (Serie serie) {
-        image.setImageResource(serie.getFoto());
+        Picasso.with(itemView.getContext()).load(serie.getImage()).into(image);
 
         name.setText(serie.getName());
 
