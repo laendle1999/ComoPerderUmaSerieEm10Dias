@@ -1,14 +1,14 @@
 package br.unicamp.ft.d166336_m202618.trashtime.repositories;
 
-import android.content.ContentValues;
-import android.content.Context;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
+        import android.content.ContentValues;
+        import android.content.Context;
+        import android.database.Cursor;
+        import android.database.sqlite.SQLiteDatabase;
 
-import java.util.ArrayList;
+        import java.util.ArrayList;
 
-import br.unicamp.ft.d166336_m202618.trashtime.database.SeriesMigration;
-import br.unicamp.ft.d166336_m202618.trashtime.models.Serie;
+        import br.unicamp.ft.d166336_m202618.trashtime.database.SeriesMigration;
+        import br.unicamp.ft.d166336_m202618.trashtime.models.Serie;
 
 public class SerieRepository {
 
