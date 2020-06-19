@@ -40,7 +40,7 @@ public class SerieFragment extends Fragment {
     @Override
     public void onStart() {
         super.onStart();
-        Log.i("testando", "chegou no onStart");
+
         serieRepository = new SerieRepository(getContext());
 
         serieAdaptor.setList_series(serieRepository.loadSeries());
@@ -58,10 +58,6 @@ public class SerieFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              final Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-
-
-        Log.i("testando", "chegou no oncreate");
-
         View view = inflater.inflate(R.layout.fragment_serie, container, false);
 
         recyclerView = view.findViewById(R.id.recycler_view_serie);

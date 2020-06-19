@@ -76,8 +76,6 @@ public class SearchAdaptor extends RecyclerView.Adapter {
             for (int i = 0; i < array.length(); i++) {
                 JSONObject serie = array.getJSONObject(i);
 
-                Log.i("testando", serie.toString());
-
                 int id = Integer.parseInt(serie.getString("id"));
 
                 float grade = Float.parseFloat(serie.getString("vote_average"));
