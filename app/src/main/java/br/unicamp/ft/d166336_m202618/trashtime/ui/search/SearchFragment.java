@@ -26,6 +26,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 
 import br.unicamp.ft.d166336_m202618.trashtime.R;
+import br.unicamp.ft.d166336_m202618.trashtime.repositories.SerieRepository;
 import br.unicamp.ft.d166336_m202618.trashtime.services.JsonReciver;
 import br.unicamp.ft.d166336_m202618.trashtime.models.Serie;
 import br.unicamp.ft.d166336_m202618.trashtime.services.TmdbService;
@@ -43,6 +44,7 @@ public class SearchFragment extends Fragment implements JsonReciver {
     private TmdbService tmdbService;
     private SearchAdaptor searchAdaptor;
     private  ProgressDialog progressDialog;
+    private SerieRepository serieRepository;
 
 
     public SearchFragment() {
@@ -51,6 +53,21 @@ public class SearchFragment extends Fragment implements JsonReciver {
                 "pt-br",
                 SearchFragment.this
         );
+    }
+
+
+    @Override
+    public void onStart() {
+        super.onStart();
+
+        serieRepository = new SerieRepository(getContext());
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+
+        serieRepository.destroy();
     }
 
     @Override
@@ -71,11 +88,21 @@ public class SearchFragment extends Fragment implements JsonReciver {
             public void onItemClick(String name) {
                 int code = searchAdaptor.filterSeries(name);
 
-                EvalutePackage evalutePackage = new EvalutePackage(code);
+                Serie serie = serieRepository.findByCode(code);
+
+                EvalutePackage evalutePackage;
+
+                if (serie == null) {
+
+                    evalutePackage = new EvalutePackage(0, code);
+                } else {
+
+                    evalutePackage = new EvalutePackage(serie.getId(), code);
+                }
 
                 Bundle bundle = new Bundle();
 
-                bundle.putSerializable("tmdb_code", evalutePackage);
+                bundle.putSerializable("serie", evalutePackage);
 
                 NavController navController = NavHostFragment.findNavController(SearchFragment.this);
 

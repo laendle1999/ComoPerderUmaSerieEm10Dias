@@ -4,6 +4,7 @@ package br.unicamp.ft.d166336_m202618.trashtime.repositories;
         import android.content.Context;
         import android.database.Cursor;
         import android.database.sqlite.SQLiteDatabase;
+        import android.util.Log;
 
         import java.util.ArrayList;
 
@@ -29,16 +30,23 @@ public class SerieRepository {
         databaseHelper.close();
     }
 
-    public void insertOrChangeData (Serie serie) {
+    public int insertOrChangeData (Serie serie) {
 
         int id = serie.getId();
 
         if (id == 0) {
-            create(serie);
+            return create(serie);
         } else {
-            //update(serie);
+            return update(serie);
         }
+    }
 
+    public void removeData (int id) {
+
+        String whereClause = "id = ?";
+        String[] whereArgs = new String[] {Integer.toString(id)};
+
+        sqLiteDatabase.delete("series", whereClause, whereArgs);
     }
 
     public ArrayList<Serie> loadSeries () {
@@ -70,7 +78,51 @@ public class SerieRepository {
         return new ArrayList<>();
     }
 
-    private void create (Serie serie) {
+    public Serie find(int id) {
+        String sql = "Select * from series where id = ?";
+
+        Cursor cursor = sqLiteDatabase.rawQuery(sql, new String[]{id + ""});
+
+        if (cursor.moveToFirst()) {
+
+            String name = cursor.getString(1);
+
+            String image = cursor.getString(2);
+
+            float grade = cursor.getFloat(3);
+
+            int tmdb_code = cursor.getInt(4);
+
+            return new Serie(id, tmdb_code, name, image, grade);
+        }
+
+        return null;
+    }
+
+    public Serie findByCode(int code) {
+        String sql = "Select * from series where tmdb_code = ?";
+
+        Cursor cursor = sqLiteDatabase.rawQuery(sql, new String[]{code + ""});
+
+        if (cursor.moveToFirst()) {
+
+            int id = cursor.getInt(0);
+
+            String name = cursor.getString(1);
+
+            String image = cursor.getString(2);
+
+            float grade = cursor.getFloat(3);
+
+            int tmdb_code = cursor.getInt(4);
+
+            return new Serie(id, tmdb_code, name, image, grade);
+        }
+
+        return null;
+    }
+
+    private int create (Serie serie) {
 
         ContentValues contentValues = new ContentValues();
 
@@ -79,7 +131,22 @@ public class SerieRepository {
         contentValues.put("grade", serie.getGrade());
         contentValues.put("tmdb_code", serie.getTmdb_code());
 
-        sqLiteDatabase.insertOrThrow("series", null, contentValues);
+        return (int)sqLiteDatabase.insertOrThrow("series", null, contentValues);
+    }
+
+    private int update (Serie serie) {
+
+        ContentValues contentValues = new ContentValues();
+
+        contentValues.put("name", serie.getName());
+        contentValues.put("image", serie.getImage());
+        contentValues.put("grade", serie.getGrade());
+        contentValues.put("tmdb_code", serie.getTmdb_code());
+
+        String whereClause = "id = ?";
+        String[] whereArgs = new String[] {Integer.toString(serie.getId())};
+
+        return sqLiteDatabase.update("series", contentValues, whereClause, whereArgs);
     }
 
 }

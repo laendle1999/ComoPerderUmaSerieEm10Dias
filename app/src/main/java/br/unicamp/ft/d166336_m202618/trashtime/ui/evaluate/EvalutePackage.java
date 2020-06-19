@@ -4,13 +4,18 @@ import java.io.Serializable;
 
 public class EvalutePackage implements Serializable {
 
-    private int id;
+    private int id, tmdb_code;
 
-    public EvalutePackage(int id) {
+    public EvalutePackage(int id, int tmdb_code) {
         this.id = id;
+        this.tmdb_code = tmdb_code;
     }
 
     public int getId() {
         return id;
+    }
+
+    public int getTmdbCode() {
+        return tmdb_code;
     }
 }

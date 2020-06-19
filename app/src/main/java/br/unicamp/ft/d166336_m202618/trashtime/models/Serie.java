@@ -32,7 +32,7 @@ public class Serie {
     }
 
     public Serie() {
-
+        this.id = 0;
     }
 
     public int getId() {
@@ -60,6 +60,11 @@ public class Serie {
     }
 
     public String getImage() {
+        return image;
+    }
+
+
+    public String getFormattedImage() {
         return "https://image.tmdb.org/t/p/w600_and_h900_bestv2" + image;
     }
 

@@ -99,5 +99,46 @@
 
     </LinearLayout>
 
+    <!-- adicionar -->
+    <LinearLayout
+        android:id="@+id/evalute_add_serie_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/evalute_add_serie"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/evalute_add_serie"
+            />
+
+    </LinearLayout>
+
+    <!-- opções -->
+    <LinearLayout
+        android:id="@+id/evalute_update_serie_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/evalute_change_serie"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/evalute_change_serie"
+            />
+        <Button
+        android:id="@+id/evalute_remove_serie"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/evalute_remove_serie"
+        />
+
+    </LinearLayout>
+
 
 </LinearLayout>
