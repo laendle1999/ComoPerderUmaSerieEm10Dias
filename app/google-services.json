@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "729962132345",
+    "firebase_url": "https://trashtime-3d8bb.firebaseio.com",
+    "project_id": "trashtime-3d8bb",
+    "storage_bucket": "trashtime-3d8bb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:729962132345:android:1b6f1f0fe892823f4eb5a8",
+        "android_client_info": {
+          "package_name": "br.unicamp.ft.d166336_m202618.trashtime"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "729962132345-sn7a9cd8adk5b8002au13n5e5b8u8830.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "br.unicamp.ft.d166336_m202618.trashtime",
+            "certificate_hash": "54b53e24b732c4dcc023b338abbddc4e48cee6dd"
+          }
+        },
+        {
+          "client_id": "729962132345-nksk571gf1o409uj9i552i9p9g5ou3f0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB35O78WSTivJIVxotFEo9CKr27RKunh6U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "729962132345-nksk571gf1o409uj9i552i9p9g5ou3f0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

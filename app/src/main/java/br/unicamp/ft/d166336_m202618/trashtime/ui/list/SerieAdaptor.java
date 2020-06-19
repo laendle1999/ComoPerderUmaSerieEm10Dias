@@ -3,6 +3,7 @@ package br.unicamp.ft.d166336_m202618.trashtime.ui.list;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -26,6 +27,17 @@ public class SerieAdaptor extends RecyclerView.Adapter {
         View view = LayoutInflater.from(parent.getContext()).inflate(
                 R.layout.adapter_serie_list, parent, false
         );
+
+        view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (alunoAdapterOnClickListner != null){
+                    TextView txt = v.findViewById(R.id.list_serie_name);
+                    String array[] = txt.getText().toString().split(",");
+                    alunoAdapterOnClickListner.onItemClick(array[0]);
+                }
+            }
+        });
 
         return new SerieViewHolder(view);
     }
@@ -64,5 +76,18 @@ public class SerieAdaptor extends RecyclerView.Adapter {
 
     public void setList_series(ArrayList<Serie> list_series) {
         this.list_series = list_series;
+    }
+
+    /**
+     * Interface de clique
+     */
+    public interface AlunoAdapterOnClickListner {
+        void onItemClick(String name);
+    }
+
+    private AlunoAdapterOnClickListner alunoAdapterOnClickListner;
+
+    public void setAlunoAdapterOnClickListner(AlunoAdapterOnClickListner a){
+        this.alunoAdapterOnClickListner = a;
     }
 }
