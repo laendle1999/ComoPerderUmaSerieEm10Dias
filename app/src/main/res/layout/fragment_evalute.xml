@@ -15,8 +15,13 @@
 
         <ImageView
             android:id="@+id/evalute_image"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:layout_marginRight="7dp"
+            android:layout_marginLeft="3dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+
             />
 
     </LinearLayout>
@@ -84,10 +89,54 @@
             android:id="@+id/evalute_serie_rating"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            style="?android:attr/ratingBarStyleSmall"
+            style="@style/ImageRatingBar"
+            android:progressDrawable="@drawable/trash_rating_display"
             android:numStars="5"
-            android:stepSize="0.1"
-            android:isIndicator="true" />
+            android:stepSize="0.5"
+            android:isIndicator="false"
+            android:layout_gravity="center"
+            android:gravity="center"/>
+
+    </LinearLayout>
+
+    <!-- adicionar -->
+    <LinearLayout
+        android:id="@+id/evalute_add_serie_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/evalute_add_serie"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/evalute_add_serie"
+            />
+
+    </LinearLayout>
+
+    <!-- opções -->
+    <LinearLayout
+        android:id="@+id/evalute_update_serie_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/evalute_change_serie"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/evalute_change_serie"
+            />
+        <Button
+        android:id="@+id/evalute_remove_serie"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/evalute_remove_serie"
+        />
 
     </LinearLayout>
 

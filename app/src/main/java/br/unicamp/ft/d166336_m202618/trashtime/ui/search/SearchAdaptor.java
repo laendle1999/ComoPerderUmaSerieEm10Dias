@@ -4,30 +4,21 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
-import com.google.gson.Gson;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonObject;
-import com.google.gson.internal.LinkedTreeMap;
-import com.google.gson.reflect.TypeToken;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.lang.reflect.Type;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.Iterator;
 
 import br.unicamp.ft.d166336_m202618.trashtime.R;
-import br.unicamp.ft.d166336_m202618.trashtime.models.Serie;
 import br.unicamp.ft.d166336_m202618.trashtime.models.SerieList;
-import br.unicamp.ft.d166336_m202618.trashtime.ui.list.SerieViewHolder;
+import br.unicamp.ft.d166336_m202618.trashtime.ui.list.SerieAdaptor;
 
 public class SearchAdaptor extends RecyclerView.Adapter {
 
@@ -43,6 +34,18 @@ public class SearchAdaptor extends RecyclerView.Adapter {
         View view = LayoutInflater.from(parent.getContext()).inflate(
                 R.layout.adapter_search_list, parent, false
         );
+
+        view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (serieAdapterOnClickListner != null){
+                    TextView txt = v.findViewById(R.id.list_serie_name);
+                    String array[] = txt.getText().toString().split(",");
+                    Log.i("testando", array[0]);
+                    serieAdapterOnClickListner.onItemClick(array[0]);
+                }
+            }
+        });
 
         return new SearchViewHolder(view);
     }
@@ -88,7 +91,32 @@ public class SearchAdaptor extends RecyclerView.Adapter {
         } catch (JSONException e) {
             e.printStackTrace();
         }
+    }
 
+    public int filterSeries (String name) {
+        Iterator<SerieList> itr = series.iterator();
+        int index = 0;
+        while (itr.hasNext()){
 
+            if(itr.next().getName().equals(name)){
+                break;
+            }
+            index++;
+        }
+
+        return series.get(index).getId();
+    }
+
+    /**
+     * Interface de clique
+     */
+    public interface SerieAdapterOnClickListner {
+        void onItemClick(String name);
+    }
+
+    private SerieAdapterOnClickListner serieAdapterOnClickListner;
+
+    public void setSerieAdapterOnClickListner(SerieAdapterOnClickListner a){
+        this.serieAdapterOnClickListner = a;
     }
 }

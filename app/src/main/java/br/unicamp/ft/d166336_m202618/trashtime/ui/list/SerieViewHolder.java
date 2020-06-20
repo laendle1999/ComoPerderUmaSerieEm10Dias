@@ -33,7 +33,7 @@ public class SerieViewHolder extends RecyclerView.ViewHolder {
     }
 
     public void bind (Serie serie) {
-        Picasso.with(itemView.getContext()).load(serie.getImage()).into(image);
+        Picasso.with(itemView.getContext()).load(serie.getFormattedImage()).into(image);
 
         name.setText(serie.getName());
 
