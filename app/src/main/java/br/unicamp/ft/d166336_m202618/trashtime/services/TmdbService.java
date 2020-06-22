@@ -26,7 +26,7 @@ public class TmdbService {
     }
 
     public void loadData (String serie) {
-        url = url + "/tv/" + serie + "?=" + token + "&language=" + language;
+        url = url + "/tv/" + serie + "?api_key=" + token + "&language=" + language;
 
         new ReciveJson(fragment).execute(url);
     }

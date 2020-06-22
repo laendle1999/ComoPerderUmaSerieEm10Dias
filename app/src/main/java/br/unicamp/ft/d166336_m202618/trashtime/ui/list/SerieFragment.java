@@ -3,6 +3,8 @@ package br.unicamp.ft.d166336_m202618.trashtime.ui.list;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
+import androidx.navigation.fragment.NavHostFragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -19,6 +21,9 @@ import java.util.Arrays;
 import br.unicamp.ft.d166336_m202618.trashtime.R;
 import br.unicamp.ft.d166336_m202618.trashtime.models.Serie;
 import br.unicamp.ft.d166336_m202618.trashtime.repositories.SerieRepository;
+import br.unicamp.ft.d166336_m202618.trashtime.ui.evaluate.EvalutePackage;
+import br.unicamp.ft.d166336_m202618.trashtime.ui.search.SearchAdaptor;
+import br.unicamp.ft.d166336_m202618.trashtime.ui.search.SearchFragment;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -80,6 +85,33 @@ public class SerieFragment extends Fragment {
                 return false;
             }
         });
+
+        SerieAdaptor.SerieAdapterOnClickListner onClickListner = new SerieAdaptor.SerieAdapterOnClickListner() {
+
+            @Override
+            public void onItemClick(String name) {
+                int id = serieAdaptor.filterSeries(name);
+
+                Serie serie = serieRepository.find(id);
+
+                Log.i("testando", serie.toString());
+
+                EvalutePackage evalutePackage;
+
+                evalutePackage = new EvalutePackage(serie.getId(), serie.getTmdb_code());
+                
+                Bundle bundle = new Bundle();
+
+                bundle.putSerializable("serie", evalutePackage);
+
+                NavController navController = NavHostFragment.findNavController(SerieFragment.this);
+
+                navController.navigate(R.id.evalute_fragment, bundle);
+
+            }
+        };
+
+        serieAdaptor.setSerieAdapterOnClickListner(onClickListner);
 
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 

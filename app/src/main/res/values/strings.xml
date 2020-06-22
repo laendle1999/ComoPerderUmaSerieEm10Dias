@@ -51,4 +51,7 @@
     <string name="series_search_hint">Buscar ...</string>
     <string name="menu_tranding">Tendências</string>
     <string name="menu_search">Buscar</string>
+    <string name="evalute_add_serie">Adicionar Serie</string>
+    <string name="evalute_change_serie">Salvar Avaliação</string>
+    <string name="evalute_remove_serie">Remover Serie</string>
 </resources>
