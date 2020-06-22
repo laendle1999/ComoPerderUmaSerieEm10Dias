@@ -1,21 +1,21 @@
 {
   "project_info": {
-    "project_number": "729962132345",
-    "firebase_url": "https://trashtime-3d8bb.firebaseio.com",
-    "project_id": "trashtime-3d8bb",
-    "storage_bucket": "trashtime-3d8bb.appspot.com"
+    "project_number": "89525208776",
+    "firebase_url": "https://trashtime-253a6.firebaseio.com",
+    "project_id": "trashtime-253a6",
+    "storage_bucket": "trashtime-253a6.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:729962132345:android:d47f411f054535ca4eb5a8",
+        "mobilesdk_app_id": "1:89525208776:android:482f5ac3bec3c6a2e147fd",
         "android_client_info": {
           "package_name": "br.unicamp.ft.d166336_m202618.trashtime"
         }
       },
       "oauth_client": [
         {
-          "client_id": "729962132345-905s9sdsb4kpje1jhvd2072m1hbeptsn.apps.googleusercontent.com",
+          "client_id": "89525208776-015k9qv1t11f0l8s6v5t7skouvfbbvpi.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "br.unicamp.ft.d166336_m202618.trashtime",
@@ -23,20 +23,20 @@
           }
         },
         {
-          "client_id": "729962132345-nksk571gf1o409uj9i552i9p9g5ou3f0.apps.googleusercontent.com",
+          "client_id": "89525208776-fhpd7uqihvqjlas0e9e53b3i1n5q4imq.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyB35O78WSTivJIVxotFEo9CKr27RKunh6U"
+          "current_key": "AIzaSyCZL8aofr77LU-BRKejFRrM5am_U3QIghU"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "729962132345-nksk571gf1o409uj9i552i9p9g5ou3f0.apps.googleusercontent.com",
+              "client_id": "89525208776-fhpd7uqihvqjlas0e9e53b3i1n5q4imq.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
