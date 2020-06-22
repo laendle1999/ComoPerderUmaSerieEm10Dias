@@ -107,6 +107,8 @@ public class EvaluteFragment extends Fragment implements JsonReciver {
             add_btn.setVisibility(LinearLayout.GONE);
 
             upd_btn.setVisibility(LinearLayout.VISIBLE);
+
+            ratingBar.setRating(evalutePackage.getGrade());
         }
 
         add_serie = view.findViewById(R.id.evalute_add_serie);

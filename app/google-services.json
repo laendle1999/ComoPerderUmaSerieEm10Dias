@@ -15,14 +15,6 @@
       },
       "oauth_client": [
         {
-          "client_id": "89525208776-015k9qv1t11f0l8s6v5t7skouvfbbvpi.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "br.unicamp.ft.d166336_m202618.trashtime",
-            "certificate_hash": "8b28462e6315133da337b6f54a158aaac5168029"
-          }
-        },
-        {
           "client_id": "89525208776-fhpd7uqihvqjlas0e9e53b3i1n5q4imq.apps.googleusercontent.com",
           "client_type": 3
         }

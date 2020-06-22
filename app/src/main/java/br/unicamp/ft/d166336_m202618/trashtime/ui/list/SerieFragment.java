@@ -98,8 +98,8 @@ public class SerieFragment extends Fragment {
 
                 EvalutePackage evalutePackage;
 
-                evalutePackage = new EvalutePackage(serie.getId(), serie.getTmdb_code());
-                
+                evalutePackage = new EvalutePackage(serie.getId(), serie.getTmdb_code(), serie.getGrade());
+
                 Bundle bundle = new Bundle();
 
                 bundle.putSerializable("serie", evalutePackage);
