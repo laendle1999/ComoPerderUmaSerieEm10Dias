@@ -19,14 +19,25 @@ import java.util.Iterator;
 import br.unicamp.ft.d166336_m202618.trashtime.R;
 import br.unicamp.ft.d166336_m202618.trashtime.models.SerieList;
 import br.unicamp.ft.d166336_m202618.trashtime.services.JsonReciver;
+import br.unicamp.ft.d166336_m202618.trashtime.services.TmdbService;
 import br.unicamp.ft.d166336_m202618.trashtime.ui.list.SerieAdaptor;
+import br.unicamp.ft.d166336_m202618.trashtime.ui.search.SearchFragment;
 
 public class RecommendationsAdaptor extends RecyclerView.Adapter implements JsonReciver {
 
     private ArrayList<SerieList> series;
+    private TmdbService tmdbService;
 
-    public RecommendationsAdaptor() {
+    public RecommendationsAdaptor(String code) {
         series = new ArrayList<>();
+
+        tmdbService = new TmdbService("http://api.themoviedb.org/3",
+                "5472dbfc461c85f5a29197d9c1fef7d5",
+                "en-us",
+                RecommendationsAdaptor.this
+        );
+
+        tmdbService.recommendations(code);
     }
 
     @NonNull
@@ -36,19 +47,19 @@ public class RecommendationsAdaptor extends RecyclerView.Adapter implements Json
                 R.layout.adapter_recommendations_list, parent, false
         );
 
+        final RecommendationsViewHolder recommendationsViewHolder = new RecommendationsViewHolder(view);
+
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (serieAdapterOnClickListner != null){
-                    TextView txt = v.findViewById(R.id.list_serie_name);
-                    String array[] = txt.getText().toString().split(",");
-                    Log.i("testando", array[0]);
-                    serieAdapterOnClickListner.onItemClick(array[0]);
+                    SerieList serie = series.get(recommendationsViewHolder.getAdapterPosition());
+                    serieAdapterOnClickListner.onItemClick(serie.getName());
                 }
             }
         });
 
-        return new RecommendationsViewHolder(view);
+        return recommendationsViewHolder;
     }
 
     @Override
@@ -113,6 +124,8 @@ public class RecommendationsAdaptor extends RecyclerView.Adapter implements Json
         } catch (JSONException e) {
             e.printStackTrace();
         }
+
+        notifyDataSetChanged();
     }
 
     /**

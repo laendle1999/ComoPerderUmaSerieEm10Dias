@@ -3,6 +3,10 @@ package br.unicamp.ft.d166336_m202618.trashtime.ui.evaluate;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
+import androidx.navigation.fragment.NavHostFragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -27,6 +31,8 @@ import br.unicamp.ft.d166336_m202618.trashtime.repositories.SerieRepository;
 import br.unicamp.ft.d166336_m202618.trashtime.services.JsonReciver;
 import br.unicamp.ft.d166336_m202618.trashtime.services.TmdbService;
 import br.unicamp.ft.d166336_m202618.trashtime.ui.quiz.QuizPackage;
+import br.unicamp.ft.d166336_m202618.trashtime.ui.recommendations.RecommendationsAdaptor;
+import br.unicamp.ft.d166336_m202618.trashtime.ui.search.SearchAdaptor;
 import br.unicamp.ft.d166336_m202618.trashtime.ui.search.SearchFragment;
 
 /**
@@ -46,6 +52,9 @@ public class EvaluteFragment extends Fragment implements JsonReciver {
     private LinearLayout add_btn, upd_btn;
 
     private Button add_serie, change_serie, delete_serie;
+
+    private RecyclerView recyclerView;
+    private RecommendationsAdaptor recommendationsAdaptor;
 
     public EvaluteFragment() {
 
@@ -84,11 +93,15 @@ public class EvaluteFragment extends Fragment implements JsonReciver {
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_evalute, container, false);
 
+        recyclerView = view.findViewById(R.id.recycler_view_recommendations);
+
         Bundle bundle = getArguments();
 
         EvalutePackage evalutePackage = (EvalutePackage) bundle.getSerializable("serie");
 
         tmdbService.loadData(evalutePackage.getTmdbCode() + "");
+
+        recommendationsAdaptor = new RecommendationsAdaptor(evalutePackage.getTmdbCode() + "");
 
         name = view.findViewById(R.id.evalute_serie_name);
         overview = view.findViewById(R.id.evalute_serie_overview);
@@ -155,6 +168,41 @@ public class EvaluteFragment extends Fragment implements JsonReciver {
                 add_btn.setVisibility(LinearLayout.VISIBLE);
             }
         });
+
+        RecommendationsAdaptor.SerieAdapterOnClickListner onClickListner = new RecommendationsAdaptor.SerieAdapterOnClickListner() {
+
+            @Override
+            public void onItemClick(String name) {
+                int code = recommendationsAdaptor.filterSeries(name);
+
+                Serie serie = serieRepository.findByCode(code);
+
+                EvalutePackage evalutePackage;
+
+                if (serie == null) {
+
+                    evalutePackage = new EvalutePackage(0, code);
+                } else {
+
+                    evalutePackage = new EvalutePackage(serie.getId(), code);
+                }
+
+                Bundle bundle = new Bundle();
+
+                bundle.putSerializable("serie", evalutePackage);
+
+                NavController navController = NavHostFragment.findNavController(EvaluteFragment.this);
+
+                navController.navigate(R.id.evalute_fragment, bundle);
+
+            }
+        };
+
+        recommendationsAdaptor.setSerieAdapterOnClickListner(onClickListner);
+
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext(), RecyclerView.HORIZONTAL, false));
+
+        recyclerView.setAdapter(recommendationsAdaptor);
 
         return view;
     }

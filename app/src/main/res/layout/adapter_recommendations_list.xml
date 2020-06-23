@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
+    android:layout_width="140dp"
     android:layout_height="wrap_content"
     android:layout_marginBottom="5dp"
-    android:layout_gravity="center_vertical"
+    android:orientation="horizontal"
     android:id="@+id/alunosRecycleView"
     >
 
@@ -12,18 +12,8 @@
         android:id="@+id/list_serie_image"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginRight="7dp"
-        android:layout_marginLeft="3dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginRight="3dp"
         android:layout_marginBottom="10dp"
         />
-
-    <Button
-        android:id="@+id/button1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true"
-        android:text="btn1" />
 
 </RelativeLayout>
