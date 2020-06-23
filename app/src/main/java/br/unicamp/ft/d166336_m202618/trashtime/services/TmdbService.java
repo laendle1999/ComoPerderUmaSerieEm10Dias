@@ -30,4 +30,10 @@ public class TmdbService {
 
         new ReciveJson(fragment).execute(url);
     }
+
+    public void recommendations (String serie) {
+        url = url + "/tv/" + serie + "/recommendations?api_key=" + token + "&language=" + language;
+
+        new ReciveJson(fragment).execute(url);
+    }
 }
