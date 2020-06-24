@@ -4,7 +4,12 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.database.Cursor;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.Locale;
 
 import br.unicamp.ft.d166336_m202618.trashtime.R;
 
@@ -13,6 +18,7 @@ public class Serie {
     private int id, tmdb_code;
     private String name, image;
     private float grade;
+    private Date date;
     private final String TABLE = "series";
 
     public Serie(int tmdb_code, String name, String image, float grade) {
@@ -78,5 +84,29 @@ public class Serie {
 
     public void setGrade(float grade) {
         this.grade = grade;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public String getFormattedDate(String format) {
+
+        if (date != null) {
+            DateFormat dateFormat = new SimpleDateFormat(format, Locale.ENGLISH);
+            return dateFormat.format(date);
+        }
+
+        return "n/a";
+    }
+
+    public void setDate(String date, String format) {
+        try {
+
+            DateFormat dateFormat = new SimpleDateFormat(format);
+            this.date = dateFormat.parse(date);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
     }
 }

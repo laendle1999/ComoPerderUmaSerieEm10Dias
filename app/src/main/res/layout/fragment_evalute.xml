@@ -140,5 +140,13 @@
 
     </LinearLayout>
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:id="@+id/recycler_view_recommendations"
+        />
+
+
 
 </LinearLayout>

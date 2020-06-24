@@ -135,8 +135,6 @@ public class SearchFragment extends Fragment implements JsonReciver {
             }
         });
 
-
-
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
         recyclerView.setAdapter(searchAdaptor);
