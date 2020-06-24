@@ -1,9 +1,7 @@
-package br.unicamp.ft.d166336_m202618.trashtime.ui.recommendations;
+package br.unicamp.ft.d166336_m202618.trashtime.ui.includes.nexteps;
 
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -14,12 +12,12 @@ import br.unicamp.ft.d166336_m202618.trashtime.R;
 import br.unicamp.ft.d166336_m202618.trashtime.models.Serie;
 import br.unicamp.ft.d166336_m202618.trashtime.models.SerieList;
 
-public class RecommendationsViewHolder extends RecyclerView.ViewHolder {
+public class NextEpsViewHolder extends RecyclerView.ViewHolder {
 
     private ImageView image;
     private View itemView;
 
-    public RecommendationsViewHolder(@NonNull View itemView) {
+    public NextEpsViewHolder(@NonNull View itemView) {
         super(itemView);
 
         this.itemView = itemView;
@@ -28,8 +26,8 @@ public class RecommendationsViewHolder extends RecyclerView.ViewHolder {
 
     }
 
-    public void bind (SerieList serie) {
+    public void bind (Serie serie) {
 
-        Picasso.with(itemView.getContext()).load(serie.getImage()).into(image);
+        Picasso.with(itemView.getContext()).load(serie.getFormattedImage()).into(image);
     }
 }

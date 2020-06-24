@@ -20,20 +20,15 @@ import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import br.unicamp.ft.d166336_m202618.trashtime.R;
 import br.unicamp.ft.d166336_m202618.trashtime.models.Serie;
-import br.unicamp.ft.d166336_m202618.trashtime.models.SerieList;
 import br.unicamp.ft.d166336_m202618.trashtime.repositories.SerieRepository;
 import br.unicamp.ft.d166336_m202618.trashtime.services.JsonReciver;
 import br.unicamp.ft.d166336_m202618.trashtime.services.TmdbService;
-import br.unicamp.ft.d166336_m202618.trashtime.ui.quiz.QuizPackage;
-import br.unicamp.ft.d166336_m202618.trashtime.ui.recommendations.RecommendationsAdaptor;
-import br.unicamp.ft.d166336_m202618.trashtime.ui.search.SearchAdaptor;
-import br.unicamp.ft.d166336_m202618.trashtime.ui.search.SearchFragment;
+import br.unicamp.ft.d166336_m202618.trashtime.ui.includes.recommendations.RecommendationsAdaptor;
 
 /**
  * A simple {@link Fragment} subclass.

@@ -1,10 +1,8 @@
-package br.unicamp.ft.d166336_m202618.trashtime.ui.recommendations;
+package br.unicamp.ft.d166336_m202618.trashtime.ui.includes.toprelated;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -20,21 +18,19 @@ import br.unicamp.ft.d166336_m202618.trashtime.R;
 import br.unicamp.ft.d166336_m202618.trashtime.models.SerieList;
 import br.unicamp.ft.d166336_m202618.trashtime.services.JsonReciver;
 import br.unicamp.ft.d166336_m202618.trashtime.services.TmdbService;
-import br.unicamp.ft.d166336_m202618.trashtime.ui.list.SerieAdaptor;
-import br.unicamp.ft.d166336_m202618.trashtime.ui.search.SearchFragment;
 
-public class RecommendationsAdaptor extends RecyclerView.Adapter implements JsonReciver {
+public class TopRelatedAdaptor extends RecyclerView.Adapter implements JsonReciver {
 
     private ArrayList<SerieList> series;
     private TmdbService tmdbService;
 
-    public RecommendationsAdaptor(String code) {
+    public TopRelatedAdaptor(String code) {
         series = new ArrayList<>();
 
         tmdbService = new TmdbService("http://api.themoviedb.org/3",
                 "5472dbfc461c85f5a29197d9c1fef7d5",
                 "en-us",
-                RecommendationsAdaptor.this
+                TopRelatedAdaptor.this
         );
 
         tmdbService.recommendations(code);
@@ -47,24 +43,24 @@ public class RecommendationsAdaptor extends RecyclerView.Adapter implements Json
                 R.layout.adapter_recommendations_list, parent, false
         );
 
-        final RecommendationsViewHolder recommendationsViewHolder = new RecommendationsViewHolder(view);
+        final TopRelatedViewHolder topRelatedViewHolder = new TopRelatedViewHolder(view);
 
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (serieAdapterOnClickListner != null){
-                    SerieList serie = series.get(recommendationsViewHolder.getAdapterPosition());
+                    SerieList serie = series.get(topRelatedViewHolder.getAdapterPosition());
                     serieAdapterOnClickListner.onItemClick(serie.getName());
                 }
             }
         });
 
-        return recommendationsViewHolder;
+        return topRelatedViewHolder;
     }
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
-        ((RecommendationsViewHolder)holder).bind(series.get(position));
+        ((TopRelatedViewHolder)holder).bind(series.get(position));
     }
 
     @Override
