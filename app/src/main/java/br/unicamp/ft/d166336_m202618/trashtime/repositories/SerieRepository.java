@@ -79,7 +79,7 @@ public class SerieRepository {
     }
 
     public ArrayList<Serie> seriesWithNextEp () {
-        String sql = "Select * from series where next_ep <> NULL";
+        String sql = "Select * from series where next_ep IS NOT NULL";
 
         Cursor cursor = sqLiteDatabase.rawQuery(sql, null);
 

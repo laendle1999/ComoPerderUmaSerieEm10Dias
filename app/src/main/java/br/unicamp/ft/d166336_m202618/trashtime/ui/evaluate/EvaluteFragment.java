@@ -76,6 +76,10 @@ public class EvaluteFragment extends Fragment implements JsonReciver {
 
         if (serie.getId() != 0) {
             serie = serieRepository.find(serie.getId());
+
+            ratingBar.setRating(serie.getGrade());
+
+            Log.i("testando aqui viu", serie.getFormattedDate("dd/MM/yyyy"));
         }
 
     }
@@ -115,6 +119,7 @@ public class EvaluteFragment extends Fragment implements JsonReciver {
 
 
         if (evalutePackage.getId() != 0) {
+
             serie.setId(evalutePackage.getId());
 
             add_btn.setVisibility(LinearLayout.GONE);
@@ -122,6 +127,8 @@ public class EvaluteFragment extends Fragment implements JsonReciver {
             upd_btn.setVisibility(LinearLayout.VISIBLE);
 
             ratingBar.setRating(evalutePackage.getGrade());
+
+
         }
 
         add_serie = view.findViewById(R.id.evalute_add_serie);
@@ -141,6 +148,7 @@ public class EvaluteFragment extends Fragment implements JsonReciver {
                 serie.setId(id);
 
                 add_btn.setVisibility(LinearLayout.GONE);
+
                 upd_btn.setVisibility(LinearLayout.VISIBLE);
             }
         });
