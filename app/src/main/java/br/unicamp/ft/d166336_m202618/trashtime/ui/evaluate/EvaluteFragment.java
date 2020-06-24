@@ -222,6 +222,12 @@ public class EvaluteFragment extends Fragment implements JsonReciver {
 
             String overview = jsonObject.getString("overview");
 
+            if (jsonObject.has("next_episode_to_air") && !jsonObject.isNull("next_episode_to_air")) {
+
+                String next_ep = jsonObject.getJSONObject("next_episode_to_air").getString("air_date");
+                serie.setDate(next_ep, "yyy-MM-dd");
+            }
+
             serie.setGrade(grade);
             serie.setName(name);
             serie.setImage(image);
