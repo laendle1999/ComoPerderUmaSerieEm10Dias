@@ -36,4 +36,16 @@ public class TmdbService {
 
         new ReciveJson(fragment).execute(url);
     }
+
+    public void topRated () {
+        url = url + "/tv/top_rated?api_key=" + token + "&language=" + language;
+
+        new ReciveJson(fragment).execute(url);
+    }
+
+    public void popular () {
+        url = url + "/tv/popular?api_key=" + token + "&language=" + language;
+
+        new ReciveJson(fragment).execute(url);
+    }
 }

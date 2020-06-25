@@ -1,6 +1,6 @@
-package br.unicamp.ft.d166336_m202618.trashtime.ui.includes.nexteps;
+package br.unicamp.ft.d166336_m202618.trashtime.ui.includes.popular;
 
-import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,47 +16,52 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 import br.unicamp.ft.d166336_m202618.trashtime.R;
-import br.unicamp.ft.d166336_m202618.trashtime.models.Serie;
 import br.unicamp.ft.d166336_m202618.trashtime.models.SerieList;
-import br.unicamp.ft.d166336_m202618.trashtime.repositories.SerieRepository;
 import br.unicamp.ft.d166336_m202618.trashtime.services.JsonReciver;
 import br.unicamp.ft.d166336_m202618.trashtime.services.TmdbService;
 
-public class NextEpsAdaptor extends RecyclerView.Adapter {
+public class PopularAdaptor extends RecyclerView.Adapter implements JsonReciver {
 
-    private ArrayList<Serie> series;
-    private SerieRepository serieRepository;
+    private ArrayList<SerieList> series;
     private TmdbService tmdbService;
 
-    public NextEpsAdaptor(ArrayList<Serie> series) {
-        this.series = series;
+    public PopularAdaptor() {
+        series = new ArrayList<>();
+
+        tmdbService = new TmdbService("http://api.themoviedb.org/3",
+                "5472dbfc461c85f5a29197d9c1fef7d5",
+                "en-us",
+                PopularAdaptor.this
+        );
+
+        tmdbService.popular();
     }
 
     @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(
-                R.layout.adapter_next_eps_list, parent, false
+                R.layout.adapter_recommendations_list, parent, false
         );
 
-        final NextEpsViewHolder nextEpsViewHolder = new NextEpsViewHolder(view);
+        final PopularViewHolder popularViewHolder = new PopularViewHolder(view);
 
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (serieAdapterOnClickListner != null){
-                    Serie serie = series.get(nextEpsViewHolder.getAdapterPosition());
+                    SerieList serie = series.get(popularViewHolder.getAdapterPosition());
                     serieAdapterOnClickListner.onItemClick(serie.getName());
                 }
             }
         });
 
-        return nextEpsViewHolder;
+        return popularViewHolder;
     }
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
-        ((NextEpsViewHolder)holder).bind(series.get(position));
+        ((PopularViewHolder)holder).bind(series.get(position));
     }
 
     @Override
@@ -74,12 +79,13 @@ public class NextEpsAdaptor extends RecyclerView.Adapter {
         series = new ArrayList<>();
     }
 
-    public void setSeries(ArrayList<Serie> series) {
-        this.series = series;
+    public void setSeries(JSONObject jsonObject) {
+
+
     }
 
     public int filterSeries (String name) {
-        Iterator<Serie> itr = series.iterator();
+        Iterator<SerieList> itr = series.iterator();
         int index = 0;
         while (itr.hasNext()){
 
@@ -90,6 +96,35 @@ public class NextEpsAdaptor extends RecyclerView.Adapter {
         }
 
         return series.get(index).getId();
+    }
+
+    @Override
+    public void recieveJson(JSONObject jsonObject) {
+
+        JSONArray array = null;
+
+        Log.i("home", "chegou aqui");
+
+        try {
+            array = jsonObject.getJSONArray("results");
+
+            for (int i = 0; i < array.length(); i++) {
+                JSONObject serie = array.getJSONObject(i);
+
+                int id = Integer.parseInt(serie.getString("id"));
+
+                float grade = Float.parseFloat(serie.getString("vote_average"));
+
+                SerieList serieList = new SerieList(id, serie.getString("original_name"), serie.getString("poster_path"), grade);
+
+                this.series.add(serieList);
+            }
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        notifyDataSetChanged();
     }
 
     /**

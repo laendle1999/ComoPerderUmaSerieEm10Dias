@@ -1,34 +1,79 @@
 {
   "project_info": {
-    "project_number": "89525208776",
-    "firebase_url": "https://trashtime-253a6.firebaseio.com",
-    "project_id": "trashtime-253a6",
-    "storage_bucket": "trashtime-253a6.appspot.com"
+    "project_number": "875169087848",
+    "firebase_url": "https://projeto-aula-mobile.firebaseio.com",
+    "project_id": "projeto-aula-mobile",
+    "storage_bucket": "projeto-aula-mobile.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:89525208776:android:482f5ac3bec3c6a2e147fd",
+        "mobilesdk_app_id": "1:875169087848:android:41047f96ff14b8f947d6dd",
         "android_client_info": {
-          "package_name": "br.unicamp.ft.d166336_m202618.trashtime"
+          "package_name": "br.unicamp.ft.d166336_m202016.aula4_projeto"
         }
       },
       "oauth_client": [
         {
-          "client_id": "89525208776-fhpd7uqihvqjlas0e9e53b3i1n5q4imq.apps.googleusercontent.com",
+          "client_id": "875169087848-ffpbcb44agn5u2a76e71mk1cik6j6q9m.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "br.unicamp.ft.d166336_m202016.aula4_projeto",
+            "certificate_hash": "54b53e24b732c4dcc023b338abbddc4e48cee6dd"
+          }
+        },
+        {
+          "client_id": "875169087848-nfk5lhjo811vcn8k3bnk8kfcfbmq0kkk.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCZL8aofr77LU-BRKejFRrM5am_U3QIghU"
+          "current_key": "AIzaSyAuPvN05wMNGeyP7PVXa4aqBVwu9nvGkWo"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "89525208776-fhpd7uqihvqjlas0e9e53b3i1n5q4imq.apps.googleusercontent.com",
+              "client_id": "875169087848-nfk5lhjo811vcn8k3bnk8kfcfbmq0kkk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:875169087848:android:f5f96306986a83f847d6dd",
+        "android_client_info": {
+          "package_name": "br.unicamp.ft.d166336_m202618.trashtime"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "875169087848-nhov54a1sfujp5a25smi2fmu4qka5uiu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "br.unicamp.ft.d166336_m202618.trashtime",
+            "certificate_hash": "54b53e24b732c4dcc023b338abbddc4e48cee6dd"
+          }
+        },
+        {
+          "client_id": "875169087848-nfk5lhjo811vcn8k3bnk8kfcfbmq0kkk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAuPvN05wMNGeyP7PVXa4aqBVwu9nvGkWo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "875169087848-nfk5lhjo811vcn8k3bnk8kfcfbmq0kkk.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

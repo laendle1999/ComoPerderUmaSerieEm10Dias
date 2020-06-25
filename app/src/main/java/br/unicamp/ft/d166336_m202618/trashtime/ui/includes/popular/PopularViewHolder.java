@@ -1,4 +1,4 @@
-package br.unicamp.ft.d166336_m202618.trashtime.ui.includes.recommendations;
+package br.unicamp.ft.d166336_m202618.trashtime.ui.includes.popular;
 
 import android.view.View;
 import android.widget.ImageView;
@@ -11,12 +11,12 @@ import com.squareup.picasso.Picasso;
 import br.unicamp.ft.d166336_m202618.trashtime.R;
 import br.unicamp.ft.d166336_m202618.trashtime.models.SerieList;
 
-public class RecommendationsViewHolder extends RecyclerView.ViewHolder {
+public class PopularViewHolder extends RecyclerView.ViewHolder {
 
     private ImageView image;
     private View itemView;
 
-    public RecommendationsViewHolder(@NonNull View itemView) {
+    public PopularViewHolder(@NonNull View itemView) {
         super(itemView);
 
         this.itemView = itemView;
