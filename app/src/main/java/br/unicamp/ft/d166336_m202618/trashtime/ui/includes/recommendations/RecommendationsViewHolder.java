@@ -27,6 +27,6 @@ public class RecommendationsViewHolder extends RecyclerView.ViewHolder {
 
     public void bind (SerieList serie) {
 
-        Picasso.with(itemView.getContext()).load(serie.getImage()).into(image);
+        Picasso.with(itemView.getContext()).load(serie.getImage()).placeholder(R.drawable.image_default).into(image);
     }
 }

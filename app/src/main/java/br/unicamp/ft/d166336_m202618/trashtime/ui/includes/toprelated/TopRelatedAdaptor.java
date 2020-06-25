@@ -1,5 +1,6 @@
 package br.unicamp.ft.d166336_m202618.trashtime.ui.includes.toprelated;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,7 +25,7 @@ public class TopRelatedAdaptor extends RecyclerView.Adapter implements JsonReciv
     private ArrayList<SerieList> series;
     private TmdbService tmdbService;
 
-    public TopRelatedAdaptor(String code) {
+    public TopRelatedAdaptor() {
         series = new ArrayList<>();
 
         tmdbService = new TmdbService("http://api.themoviedb.org/3",
@@ -33,7 +34,7 @@ public class TopRelatedAdaptor extends RecyclerView.Adapter implements JsonReciv
                 TopRelatedAdaptor.this
         );
 
-        tmdbService.recommendations(code);
+        tmdbService.topRated();
     }
 
     @NonNull
@@ -101,6 +102,8 @@ public class TopRelatedAdaptor extends RecyclerView.Adapter implements JsonReciv
     public void recieveJson(JSONObject jsonObject) {
 
         JSONArray array = null;
+
+        Log.i("home", "chegou aqui");
 
         try {
             array = jsonObject.getJSONArray("results");

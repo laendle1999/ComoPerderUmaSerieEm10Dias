@@ -101,12 +101,18 @@ public class Serie {
     }
 
     public void setDate(String date, String format) {
+
+
+
         try {
 
             DateFormat dateFormat = new SimpleDateFormat(format);
             this.date = dateFormat.parse(date);
         } catch (ParseException e) {
             e.printStackTrace();
+        } catch (NullPointerException e) {
+            e.printStackTrace();
+            this.date = null;
         }
     }
 }

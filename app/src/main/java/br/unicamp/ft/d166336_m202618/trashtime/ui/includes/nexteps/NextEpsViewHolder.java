@@ -2,6 +2,7 @@ package br.unicamp.ft.d166336_m202618.trashtime.ui.includes.nexteps;
 
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -16,6 +17,7 @@ public class NextEpsViewHolder extends RecyclerView.ViewHolder {
 
     private ImageView image;
     private View itemView;
+    private TextView date;
 
     public NextEpsViewHolder(@NonNull View itemView) {
         super(itemView);
@@ -24,10 +26,13 @@ public class NextEpsViewHolder extends RecyclerView.ViewHolder {
 
         image = itemView.findViewById(R.id.list_serie_image);
 
+        date = itemView.findViewById(R.id.recycler_data);
     }
 
     public void bind (Serie serie) {
 
-        Picasso.with(itemView.getContext()).load(serie.getFormattedImage()).into(image);
+        Picasso.with(itemView.getContext()).load(serie.getFormattedImage()).placeholder(R.drawable.image_default).into(image);
+
+        date.setText(serie.getFormattedDate("dd/MM"));
     }
 }

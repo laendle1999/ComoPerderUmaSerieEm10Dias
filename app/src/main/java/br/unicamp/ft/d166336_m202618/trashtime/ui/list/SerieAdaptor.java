@@ -54,7 +54,11 @@ public class SerieAdaptor extends RecyclerView.Adapter {
 
     @Override
     public int getItemCount() {
-        return list_series.size();
+        if (list_series != null) {
+            return list_series.size();
+        }
+
+        return 0;
     }
 
     public void search (String words) {

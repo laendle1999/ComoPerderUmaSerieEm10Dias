@@ -98,7 +98,13 @@ public class SerieRepository {
 
                 int tmdb_code = cursor.getInt(4);
 
-                series.add(new Serie(id, tmdb_code, name, image, grade));
+                String date = cursor.getString(5);
+
+                Serie serie =  new Serie(id, tmdb_code, name, image, grade);
+                
+                serie.setDate(date, "yyyy-MM-dd");
+
+                series.add(serie);
             } while (cursor.moveToNext());
 
             return series;

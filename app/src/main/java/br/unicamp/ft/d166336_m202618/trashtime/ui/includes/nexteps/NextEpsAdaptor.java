@@ -28,16 +28,15 @@ public class NextEpsAdaptor extends RecyclerView.Adapter {
     private SerieRepository serieRepository;
     private TmdbService tmdbService;
 
-    public NextEpsAdaptor(Context context) {
-        serieRepository = new SerieRepository(context);
-        series = serieRepository.seriesWithNextEp();
+    public NextEpsAdaptor(ArrayList<Serie> series) {
+        this.series = series;
     }
 
     @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(
-                R.layout.adapter_recommendations_list, parent, false
+                R.layout.adapter_next_eps_list, parent, false
         );
 
         final NextEpsViewHolder nextEpsViewHolder = new NextEpsViewHolder(view);
@@ -75,9 +74,8 @@ public class NextEpsAdaptor extends RecyclerView.Adapter {
         series = new ArrayList<>();
     }
 
-    public void setSeries(JSONObject jsonObject) {
-
-
+    public void setSeries(ArrayList<Serie> series) {
+        this.series = series;
     }
 
     public int filterSeries (String name) {
