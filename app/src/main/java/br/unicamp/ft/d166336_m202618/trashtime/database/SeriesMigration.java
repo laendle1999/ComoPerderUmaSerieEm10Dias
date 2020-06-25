@@ -8,7 +8,7 @@ import androidx.annotation.Nullable;
 
 public class SeriesMigration extends SQLiteOpenHelper {
 
-    private static final int DB_VERSION = 1;
+    private static final int DB_VERSION = 2;
     private static final String DB_NAME = "trash_time_db";
 
     public SeriesMigration(@Nullable Context context) {
@@ -27,6 +27,10 @@ public class SeriesMigration extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+
+        if (oldVersion < 2) {
+            db.execSQL("ALTER TABLE series ADD next_ep DATE;");
+        }
 
     }
 }

@@ -3,6 +3,10 @@ package br.unicamp.ft.d166336_m202618.trashtime.ui.evaluate;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
+import androidx.navigation.fragment.NavHostFragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -16,18 +20,15 @@ import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import br.unicamp.ft.d166336_m202618.trashtime.R;
 import br.unicamp.ft.d166336_m202618.trashtime.models.Serie;
-import br.unicamp.ft.d166336_m202618.trashtime.models.SerieList;
 import br.unicamp.ft.d166336_m202618.trashtime.repositories.SerieRepository;
 import br.unicamp.ft.d166336_m202618.trashtime.services.JsonReciver;
 import br.unicamp.ft.d166336_m202618.trashtime.services.TmdbService;
-import br.unicamp.ft.d166336_m202618.trashtime.ui.quiz.QuizPackage;
-import br.unicamp.ft.d166336_m202618.trashtime.ui.search.SearchFragment;
+import br.unicamp.ft.d166336_m202618.trashtime.ui.includes.recommendations.RecommendationsAdaptor;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -46,6 +47,9 @@ public class EvaluteFragment extends Fragment implements JsonReciver {
     private LinearLayout add_btn, upd_btn;
 
     private Button add_serie, change_serie, delete_serie;
+
+    private RecyclerView recyclerView;
+    private RecommendationsAdaptor recommendationsAdaptor;
 
     public EvaluteFragment() {
 
@@ -67,6 +71,10 @@ public class EvaluteFragment extends Fragment implements JsonReciver {
 
         if (serie.getId() != 0) {
             serie = serieRepository.find(serie.getId());
+
+            ratingBar.setRating(serie.getGrade());
+
+            Log.i("testando aqui viu", serie.getFormattedDate("dd/MM/yyyy"));
         }
 
     }
@@ -84,11 +92,15 @@ public class EvaluteFragment extends Fragment implements JsonReciver {
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_evalute, container, false);
 
+        recyclerView = view.findViewById(R.id.recycler_view_recommendations);
+
         Bundle bundle = getArguments();
 
         EvalutePackage evalutePackage = (EvalutePackage) bundle.getSerializable("serie");
 
         tmdbService.loadData(evalutePackage.getTmdbCode() + "");
+
+        recommendationsAdaptor = new RecommendationsAdaptor(evalutePackage.getTmdbCode() + "");
 
         name = view.findViewById(R.id.evalute_serie_name);
         overview = view.findViewById(R.id.evalute_serie_overview);
@@ -102,11 +114,16 @@ public class EvaluteFragment extends Fragment implements JsonReciver {
 
 
         if (evalutePackage.getId() != 0) {
+
             serie.setId(evalutePackage.getId());
 
             add_btn.setVisibility(LinearLayout.GONE);
 
             upd_btn.setVisibility(LinearLayout.VISIBLE);
+
+            ratingBar.setRating(evalutePackage.getGrade());
+
+
         }
 
         add_serie = view.findViewById(R.id.evalute_add_serie);
@@ -126,6 +143,7 @@ public class EvaluteFragment extends Fragment implements JsonReciver {
                 serie.setId(id);
 
                 add_btn.setVisibility(LinearLayout.GONE);
+
                 upd_btn.setVisibility(LinearLayout.VISIBLE);
             }
         });
@@ -154,6 +172,41 @@ public class EvaluteFragment extends Fragment implements JsonReciver {
             }
         });
 
+        RecommendationsAdaptor.SerieAdapterOnClickListner onClickListner = new RecommendationsAdaptor.SerieAdapterOnClickListner() {
+
+            @Override
+            public void onItemClick(String name) {
+                int code = recommendationsAdaptor.filterSeries(name);
+
+                Serie serie = serieRepository.findByCode(code);
+
+                EvalutePackage evalutePackage;
+
+                if (serie == null) {
+
+                    evalutePackage = new EvalutePackage(0, code);
+                } else {
+
+                    evalutePackage = new EvalutePackage(serie.getId(), code);
+                }
+
+                Bundle bundle = new Bundle();
+
+                bundle.putSerializable("serie", evalutePackage);
+
+                NavController navController = NavHostFragment.findNavController(EvaluteFragment.this);
+
+                navController.navigate(R.id.evalute_fragment, bundle);
+
+            }
+        };
+
+        recommendationsAdaptor.setSerieAdapterOnClickListner(onClickListner);
+
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext(), RecyclerView.HORIZONTAL, false));
+
+        recyclerView.setAdapter(recommendationsAdaptor);
+
         return view;
     }
 
@@ -171,6 +224,12 @@ public class EvaluteFragment extends Fragment implements JsonReciver {
             String image = jsonObject.getString("poster_path");
 
             String overview = jsonObject.getString("overview");
+
+            if (jsonObject.has("next_episode_to_air") && !jsonObject.isNull("next_episode_to_air")) {
+
+                String next_ep = jsonObject.getJSONObject("next_episode_to_air").getString("air_date");
+                serie.setDate(next_ep, "yyy-MM-dd");
+            }
 
             serie.setGrade(grade);
             serie.setName(name);
