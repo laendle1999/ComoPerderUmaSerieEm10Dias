@@ -8,14 +8,13 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:821266641470:android:16e2253e344d0a19b7d76f",
+        "mobilesdk_app_id": "1:821266641470:android:4ace17963338bccbb7d76f",
         "android_client_info": {
           "package_name": "br.unicamp.ft.d166336_m202618.trashtime"
         }
       },
       "oauth_client": [
         {
-<<<<<<< HEAD
           "client_id": "821266641470-cioiibmt58evqbq5ankgmsuqsu5neb5i.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
@@ -25,9 +24,6 @@
         },
         {
           "client_id": "821266641470-c3jne9io6as7godghtts1kp02rh8jo74.apps.googleusercontent.com",
-=======
-          "client_id": "89525208776-fhpd7uqihvqjlas0e9e53b3i1n5q4imq.apps.googleusercontent.com",
->>>>>>> 4e32cdec2958f93701ae62b4f8267032829c7836
           "client_type": 3
         }
       ],
