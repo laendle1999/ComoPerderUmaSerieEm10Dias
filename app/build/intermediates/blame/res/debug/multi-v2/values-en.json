@@ -1,17 +1,17 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/marcelo/Documents/Projetos/AndroidStudio/TrashTime/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-en/values-en.xml",
+            "outputFile": "C:\\Users\\danih\\OneDrive\\Documentos\\GitHub\\ComoPerderUmaSerieEm10Dias\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-en\\values-en.xml",
             "map": [
                 {
-                    "source": "/Users/marcelo/Documents/Projetos/AndroidStudio/TrashTime/app/src/main/res/values-en/array.xml",
+                    "source": "C:\\Users\\danih\\OneDrive\\Documentos\\GitHub\\ComoPerderUmaSerieEm10Dias\\app\\src\\main\\res\\values-en\\array.xml",
                     "from": {
                         "startLines": "18,27,41,2",
                         "startColumns": "4,4,4,4",
-                        "startOffsets": "462,783,1243,55",
+                        "startOffsets": "480,810,1284,57",
                         "endLines": "25,39,52,16",
                         "endColumns": "19,12,19,19",
-                        "endOffsets": "777,1237,1643,456"
+                        "endOffsets": "802,1276,1695,472"
                     },
                     "to": {
                         "startLines": "2,10,23,35",
@@ -23,13 +23,13 @@
                     }
                 },
                 {
-                    "source": "/Users/marcelo/Documents/Projetos/AndroidStudio/TrashTime/app/src/main/res/values-en/strings.xml",
+                    "source": "C:\\Users\\danih\\OneDrive\\Documentos\\GitHub\\ComoPerderUmaSerieEm10Dias\\app\\src\\main\\res\\values-en\\strings.xml",
                     "from": {
                         "startLines": "7,1,16,13,10,9,17,49,11,51,6,5,4,3,2,38,40,37,42,39,43,41,30,29,33,28,32,27,26,31,36,25,19,35,20,44,34,21,24,23,22,48,46,47,45,18,50",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "410,16,721,610,507,464,791,2898,556,3003,348,273,213,137,63,2147,2279,2082,2420,2211,2494,2351,1593,1535,1771,1484,1708,1434,1380,1645,1981,1287,900,1916,958,2575,1821,1063,1233,1173,1117,2853,2735,2788,2680,834,2945",
+                        "startOffsets": "417,17,737,623,517,473,808,2947,567,3054,354,278,217,140,65,2185,2319,2119,2462,2250,2537,2392,1623,1564,1804,1512,1740,1461,1406,1676,2017,1312,919,1951,978,2619,1855,1084,1257,1196,1139,2901,2781,2835,2725,852,2995",
                         "endColumns": "52,46,69,51,48,42,42,46,52,50,61,74,59,75,73,63,71,64,73,67,80,68,51,57,49,50,62,49,53,62,100,92,57,64,104,104,94,53,53,59,55,44,52,64,54,65,57",
-                        "endOffsets": "458,58,786,657,551,502,829,2940,604,3049,405,343,268,208,132,2206,2346,2142,2489,2274,2570,2415,1640,1588,1816,1530,1766,1479,1429,1703,2077,1375,953,1976,1058,2675,1911,1112,1282,1228,1168,2893,2783,2848,2730,895,2998"
+                        "endOffsets": "465,59,802,670,561,511,846,2989,615,3100,411,348,272,211,134,2244,2386,2179,2531,2313,2613,2456,1670,1617,1849,1558,1798,1506,1455,1734,2113,1400,972,2011,1078,2719,1945,1133,1306,1251,1190,2941,2829,2895,2775,913,3048"
                     },
                     "to": {
                         "startLines": "50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96",
