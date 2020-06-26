@@ -56,12 +56,12 @@
         "source": "/Users/marcelo/Documents/Projetos/AndroidStudio/TrashTime/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png"
     },
     {
-        "merged": "/Users/marcelo/Documents/Projetos/AndroidStudio/TrashTime/app/build/intermediates/res/merged/debug/drawable_ic_menu_camera.xml.flat",
-        "source": "/Users/marcelo/Documents/Projetos/AndroidStudio/TrashTime/app/src/main/res/drawable/ic_menu_camera.xml"
-    },
-    {
         "merged": "/Users/marcelo/Documents/Projetos/AndroidStudio/TrashTime/app/build/intermediates/res/merged/debug/layout_fragment_tranding.xml.flat",
         "source": "/Users/marcelo/Documents/Projetos/AndroidStudio/TrashTime/app/src/main/res/layout/fragment_tranding.xml"
+    },
+    {
+        "merged": "/Users/marcelo/Documents/Projetos/AndroidStudio/TrashTime/app/build/intermediates/res/merged/debug/drawable_ic_menu_camera.xml.flat",
+        "source": "/Users/marcelo/Documents/Projetos/AndroidStudio/TrashTime/app/src/main/res/drawable/ic_menu_camera.xml"
     },
     {
         "merged": "/Users/marcelo/Documents/Projetos/AndroidStudio/TrashTime/app/build/intermediates/res/merged/debug/drawable-xxhdpi_ic_list.png.flat",
@@ -142,6 +142,10 @@
     {
         "merged": "/Users/marcelo/Documents/Projetos/AndroidStudio/TrashTime/app/build/intermediates/res/merged/debug/drawable-anydpi_ic_home.xml.flat",
         "source": "/Users/marcelo/Documents/Projetos/AndroidStudio/TrashTime/app/src/main/res/drawable-anydpi/ic_home.xml"
+    },
+    {
+        "merged": "/Users/marcelo/Documents/Projetos/AndroidStudio/TrashTime/app/build/intermediates/res/merged/debug/drawable_mentira.jpg.flat",
+        "source": "/Users/marcelo/Documents/Projetos/AndroidStudio/TrashTime/app/src/main/res/drawable/mentira.jpg"
     },
     {
         "merged": "/Users/marcelo/Documents/Projetos/AndroidStudio/TrashTime/app/build/intermediates/res/merged/debug/mipmap-xhdpi_ic_launcher_round.png.flat",
@@ -276,6 +280,10 @@
         "source": "/Users/marcelo/Documents/Projetos/AndroidStudio/TrashTime/app/src/main/res/layout/fragment_search.xml"
     },
     {
+        "merged": "/Users/marcelo/Documents/Projetos/AndroidStudio/TrashTime/app/build/intermediates/res/merged/debug/drawable_segredo.jpg.flat",
+        "source": "/Users/marcelo/Documents/Projetos/AndroidStudio/TrashTime/app/src/main/res/drawable/segredo.jpg"
+    },
+    {
         "merged": "/Users/marcelo/Documents/Projetos/AndroidStudio/TrashTime/app/build/intermediates/res/merged/debug/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
         "source": "/Users/marcelo/Documents/Projetos/AndroidStudio/TrashTime/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml"
     },
@@ -342,6 +350,10 @@
     {
         "merged": "/Users/marcelo/Documents/Projetos/AndroidStudio/TrashTime/app/build/intermediates/res/merged/debug/layout_fragment_gallery.xml.flat",
         "source": "/Users/marcelo/Documents/Projetos/AndroidStudio/TrashTime/app/src/main/res/layout/fragment_gallery.xml"
+    },
+    {
+        "merged": "/Users/marcelo/Documents/Projetos/AndroidStudio/TrashTime/app/build/intermediates/res/merged/debug/drawable_megafone.jpg.flat",
+        "source": "/Users/marcelo/Documents/Projetos/AndroidStudio/TrashTime/app/src/main/res/drawable/megafone.jpg"
     },
     {
         "merged": "/Users/marcelo/Documents/Projetos/AndroidStudio/TrashTime/app/build/intermediates/res/merged/debug/drawable-xxxhdpi_ic_trash.png.flat",

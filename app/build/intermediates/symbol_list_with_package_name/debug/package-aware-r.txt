@@ -58,6 +58,7 @@ animator mtrl_fab_transformation_sheet_collapse_spec
 animator mtrl_fab_transformation_sheet_expand_spec
 array finais
 array fotos
+array quiz_result_images
 array quiz_result_texts
 array quiz_result_titles
 array series
@@ -816,6 +817,7 @@ color checkbox_themeable_attribute_color
 color colorAccent
 color colorPrimary
 color colorPrimaryDark
+color colorQuizCard
 color common_google_signin_btn_text_dark
 color common_google_signin_btn_text_dark_default
 color common_google_signin_btn_text_dark_disabled
@@ -1464,6 +1466,8 @@ drawable ic_trash
 drawable ic_trashback
 drawable ic_unknow
 drawable image_default
+drawable megafone
+drawable mentira
 drawable mtrl_dialog_background
 drawable mtrl_dropdown_arrow
 drawable mtrl_ic_arrow_drop_down
@@ -1488,6 +1492,7 @@ drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
 drawable punho_de_ferro
 drawable riverdale
+drawable segredo
 drawable side_nav_bar
 drawable supergirl
 drawable supernatural
@@ -1581,6 +1586,7 @@ id bottom
 id buttonPanel
 id cancel_action
 id cancel_button
+id cardview
 id center
 id center_horizontal
 id center_vertical
@@ -1637,7 +1643,6 @@ id evalute_update_serie_layout
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
-id fab
 id fade
 id fill
 id fill_horizontal
@@ -1666,6 +1671,7 @@ id icon_only
 id ifRoom
 id image
 id imageView
+id image_layout
 id info
 id invisible
 id italic
@@ -1762,14 +1768,9 @@ id quiz_food_pizza
 id quiz_food_popcorn
 id quiz_food_scoobySnack
 id quiz_name
-id quiz_result_cooker
-id quiz_result_food
-id quiz_result_name
+id quiz_result_image
 id quiz_result_result
 id quiz_result_result_title
-id quiz_result_signo
-id quiz_result_sleep
-id quiz_result_worstfinal
 id quiz_signo
 id quiz_sleep
 id quiz_sleep_option_bed
