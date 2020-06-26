@@ -71,4 +71,10 @@ e ta sempre procurando coisas sobre a mesma.
 Aceite o seu gosto duvidoso e venha para o lado lixo da tv.</item>
     </string-array>
 
+    <array name="quiz_result_images">
+        <item>@drawable/segredo</item>
+        <item>@drawable/megafone</item>
+        <item>@drawable/mentira</item>
+    </array>
+
 </resources>

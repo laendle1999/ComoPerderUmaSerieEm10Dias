@@ -12,7 +12,7 @@ public class QuizPackage implements Serializable {
 
     public QuizPackage() {
         Random random = new Random();
-        this.result = random.nextInt(3) + 1;
+        this.result = random.nextInt(3);
     }
 
     public QuizPackage(String name, String sleep, String thanos, String cooker, String worstFinal, String signo, List<String> food) {
@@ -25,7 +25,7 @@ public class QuizPackage implements Serializable {
         this.food = food;
 
         Random random = new Random();
-        this.result = random.nextInt(3) + 1;
+        this.result = random.nextInt(3);
     }
 
     public String getName() {

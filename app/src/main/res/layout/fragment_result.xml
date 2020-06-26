@@ -3,148 +3,79 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_gravity="center"
     android:orientation="vertical">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical"
-        android:layout_marginBottom="10dp"
-        android:padding="5dp">
+        android:layout_margin="20dp"
+        app:cardCornerRadius="4dp"
+        app:cardBackgroundColor="@color/colorQuizCard"
+        android:padding="15dp">
 
-        <!-- Nome -->
-        <TextView
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/quiz_label_name"
-            android:textSize="15dp"
-            android:textStyle="bold"
+            android:id="@+id/cardview"
+            android:padding="0dp"
+            android:orientation="vertical">
 
-            />
+            <LinearLayout
+                android:id="@+id/image_layout"
+                android:layout_alignParentTop="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="200dp"
+                    android:layout_alignParentStart="true"
+                    android:id="@+id/quiz_result_image"
+                    android:padding="5dp"
+                    android:paddingTop="0dp"
+                    />
+            </LinearLayout>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/quiz_result_name"
-            android:layout_marginBottom="5dp"
-            />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@id/image_layout"
+                android:orientation="vertical">
 
-        <!-- Onde Dormir -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Você Tirou:"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:layout_gravity="center"
+                    />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Melhor lugar para dormir:"
-            android:textSize="15dp"
-            android:textStyle="bold"
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Você Tirou:"
+                    android:textSize="25dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:layout_gravity="center"
+                    android:id="@+id/quiz_result_result_title"
+                    />
 
-            />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/quiz_result_result"
+                    android:textColor="@color/white"
+                    android:padding="5dp"
+                    />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/quiz_result_sleep"
-            android:layout_marginBottom="5dp"
-            />
+            </LinearLayout>
 
-        <!-- Lanchinho -->
+        </LinearLayout>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Melhor lanchinho para marotonar:"
-            android:textSize="15dp"
-            android:textStyle="bold"
-
-            />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/quiz_result_food"
-            android:layout_marginBottom="5dp"
-            />
-
-        <!-- Pior final -->
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Pior final:"
-            android:textSize="15dp"
-            android:textStyle="bold"
-
-            />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/quiz_result_worstfinal"
-            android:layout_marginBottom="5dp"
-            />
-
-        <!-- Signo -->
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Signo:"
-            android:textSize="15dp"
-            android:textStyle="bold"
-
-            />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/quiz_result_signo"
-            android:layout_marginBottom="5dp"
-            />
-
-        <!-- Cozinheiro -->
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Especialização de cozinheiro:"
-            android:textSize="15dp"
-            android:textStyle="bold"
-
-            />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/quiz_result_cooker"
-            android:layout_marginBottom="5dp"
-            />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Você Tirou:"
-            android:textSize="20dp"
-            android:textStyle="bold"
-            android:layout_gravity="center"
-            />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Você Tirou:"
-            android:textSize="25dp"
-            android:textStyle="bold"
-            android:layout_gravity="center"
-            android:id="@+id/quiz_result_result_title"
-            />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/quiz_result_result"
-            android:layout_marginBottom="5dp"
-            />
-
-    </LinearLayout>
+    </androidx.cardview.widget.CardView>
 
 </LinearLayout>

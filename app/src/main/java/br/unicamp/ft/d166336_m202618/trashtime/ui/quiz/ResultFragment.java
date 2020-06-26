@@ -1,5 +1,6 @@
 package br.unicamp.ft.d166336_m202618.trashtime.ui.quiz;
 
+import android.content.res.TypedArray;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -8,6 +9,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import org.w3c.dom.Text;
@@ -19,14 +21,8 @@ import br.unicamp.ft.d166336_m202618.trashtime.R;
  */
 public class ResultFragment extends Fragment {
 
-    private TextView quizResultName;
-    private TextView quizResultSigno;
-    private TextView quizResultSleep;
-    private TextView quizResultFood;
-    private TextView quizResultWorstFinal;
-    private TextView quizResultCooker;
-    private TextView quizResultResult;
-    private TextView quizResultTitle;
+    private TextView quizResultResult, quizResultTitle;
+    private ImageView imageView;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -37,30 +33,6 @@ public class ResultFragment extends Fragment {
         Bundle bundle = getArguments();
 
         QuizPackage quizPackage = (QuizPackage) bundle.getSerializable("quiz");
-
-        quizResultName = view.findViewById(R.id.quiz_result_name);
-
-        quizResultName.setText(quizPackage.getName());
-
-        quizResultSigno = view.findViewById(R.id.quiz_result_sleep);
-
-        quizResultSigno.setText(quizPackage.getSleep());
-
-        quizResultSigno = view.findViewById(R.id.quiz_result_food);
-
-        quizResultSigno.setText(quizPackage.getFood());
-
-        quizResultSigno = view.findViewById(R.id.quiz_result_worstfinal);
-
-        quizResultSigno.setText(quizPackage.getWorstFinal());
-
-        quizResultSigno = view.findViewById(R.id.quiz_result_signo);
-
-        quizResultSigno.setText(quizPackage.getSigno());
-
-        quizResultSigno = view.findViewById(R.id.quiz_result_cooker);
-
-        quizResultSigno.setText(quizPackage.getCooker());
 
         quizResultResult = view.findViewById(R.id.quiz_result_result);
 
@@ -73,6 +45,14 @@ public class ResultFragment extends Fragment {
         String[] titles = getActivity().getResources().getStringArray(R.array.quiz_result_titles);
 
         quizResultTitle.setText(titles[quizPackage.getResult()]);
+
+        imageView = view.findViewById(R.id.quiz_result_image);
+
+        TypedArray images = getActivity().getResources().obtainTypedArray(R.array.quiz_result_images);
+
+        //Log.i("testando meu filho", images[0] + "");
+        imageView.setImageResource(images.getResourceId(quizPackage.getResult(), 0));
+        //imageView.setImageResource(R.drawable.image_default);
 
         return view;
     }
