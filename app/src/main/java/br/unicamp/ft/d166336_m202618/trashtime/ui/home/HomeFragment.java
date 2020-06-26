@@ -5,13 +5,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProviders;
 import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -22,11 +17,9 @@ import java.util.ArrayList;
 import br.unicamp.ft.d166336_m202618.trashtime.R;
 import br.unicamp.ft.d166336_m202618.trashtime.models.Serie;
 import br.unicamp.ft.d166336_m202618.trashtime.repositories.SerieRepository;
-import br.unicamp.ft.d166336_m202618.trashtime.ui.evaluate.EvaluteFragment;
 import br.unicamp.ft.d166336_m202618.trashtime.ui.evaluate.EvalutePackage;
 import br.unicamp.ft.d166336_m202618.trashtime.ui.includes.nexteps.NextEpsAdaptor;
 import br.unicamp.ft.d166336_m202618.trashtime.ui.includes.popular.PopularAdaptor;
-import br.unicamp.ft.d166336_m202618.trashtime.ui.includes.recommendations.RecommendationsAdaptor;
 import br.unicamp.ft.d166336_m202618.trashtime.ui.includes.toprelated.TopRelatedAdaptor;
 
 public class HomeFragment extends Fragment {

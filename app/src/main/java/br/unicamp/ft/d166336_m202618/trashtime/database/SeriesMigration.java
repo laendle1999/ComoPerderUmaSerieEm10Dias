@@ -21,7 +21,8 @@ public class SeriesMigration extends SQLiteOpenHelper {
             "name VARCHAR," +
             "image VARCHAR," +
             "grade FLOAT," +
-            "tmdb_code INTEGER  " +
+            "tmdb_code INTEGER,  " +
+            "next_ep DATE  " +
         ");");
     }
 

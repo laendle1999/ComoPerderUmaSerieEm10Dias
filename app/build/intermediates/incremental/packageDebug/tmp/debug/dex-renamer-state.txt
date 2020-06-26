@@ -1,7 +1,7 @@
-#Thu Jun 25 18:05:27 BRT 2020
-base.0=C\:\\Users\\danih\\OneDrive\\Documentos\\GitHub\\ComoPerderUmaSerieEm10Dias\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\out\\classes.dex
+#Thu Jun 25 22:09:30 BRT 2020
+base.0=/Users/marcelo/Documents/Projetos/AndroidStudio/TrashTime/app/build/intermediates/dex/debug/mergeExtDexDebug/out/classes.dex
 path.1=classes.dex
 renamed.1=classes2.dex
 path.0=classes.dex
 renamed.0=classes.dex
-base.1=C\:\\Users\\danih\\OneDrive\\Documentos\\GitHub\\ComoPerderUmaSerieEm10Dias\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\out\\classes.dex
+base.1=/Users/marcelo/Documents/Projetos/AndroidStudio/TrashTime/app/build/intermediates/dex/debug/mergeProjectDexDebug/out/classes.dex

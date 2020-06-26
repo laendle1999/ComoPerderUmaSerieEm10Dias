@@ -1722,7 +1722,6 @@ id nav_quiz
 id nav_search
 id nav_series
 id nav_slideshow
-id nav_tranding
 id nav_view
 id navigation_header_container
 id never

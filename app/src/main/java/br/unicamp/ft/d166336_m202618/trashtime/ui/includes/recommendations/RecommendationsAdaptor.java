@@ -30,7 +30,7 @@ public class RecommendationsAdaptor extends RecyclerView.Adapter implements Json
         tmdbService = new TmdbService("http://api.themoviedb.org/3",
                 "5472dbfc461c85f5a29197d9c1fef7d5",
                 "en-us",
-                RecommendationsAdaptor.this
+                br.unicamp.ft.d166336_m202618.trashtime.ui.includes.recommendations.RecommendationsAdaptor.this
         );
 
         tmdbService.recommendations(code);

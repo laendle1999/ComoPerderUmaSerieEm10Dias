@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\danih\\OneDrive\\Documentos\\GitHub\\ComoPerderUmaSerieEm10Dias\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-w360dp-port-v13\\values-w360dp-port-v13.xml",
+            "outputFile": "/Users/marcelo/Documents/Projetos/AndroidStudio/TrashTime/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-w360dp-port-v13/values-w360dp-port-v13.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\danih\\.gradle\\caches\\transforms-2\\files-2.1\\6029c1862846be4a7ec1743d4d20ec64\\material-1.1.0\\res\\values-w360dp-port-v13\\values-w360dp-port-v13.xml",
+                    "source": "/Users/marcelo/.gradle/caches/transforms-2/files-2.1/6029c1862846be4a7ec1743d4d20ec64/material-1.1.0/res/values-w360dp-port-v13/values-w360dp-port-v13.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
                         "startColumns": "4,4,4,4,4,4,4,4",
