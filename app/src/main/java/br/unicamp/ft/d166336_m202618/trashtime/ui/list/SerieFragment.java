@@ -14,6 +14,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -33,6 +34,7 @@ public class SerieFragment extends Fragment {
     private SerieRepository serieRepository;
     private RecyclerView recyclerView;
     private EditText editText;
+    private TextView no_series;
     private final SerieAdaptor serieAdaptor;
 
 
@@ -50,6 +52,11 @@ public class SerieFragment extends Fragment {
 
         serieAdaptor.setList_series(serieRepository.loadSeries());
         serieAdaptor.notifyDataSetChanged();
+
+        if (serieAdaptor.getItemCount() == 0) {
+            no_series.setVisibility(View.VISIBLE);
+            recyclerView.setVisibility(View.GONE);
+        }
     }
 
     @Override
@@ -68,6 +75,8 @@ public class SerieFragment extends Fragment {
         recyclerView = view.findViewById(R.id.recycler_view_serie);
 
         editText = view.findViewById(R.id.series_search);
+
+        no_series = view.findViewById(R.id.series_no_series_message);
 
         editText.setOnKeyListener(new View.OnKeyListener() {
             @Override

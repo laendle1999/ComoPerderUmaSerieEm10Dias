@@ -5,6 +5,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
@@ -30,6 +31,7 @@ public class HomeFragment extends Fragment {
     private NextEpsAdaptor newEpsAdaptor;
     private TopRelatedAdaptor topAdaptor;
     private PopularAdaptor popularAdaptor;
+    private TextView no_next_eps;
 
 
     @Override
@@ -40,6 +42,11 @@ public class HomeFragment extends Fragment {
 
         newEpsAdaptor.setSeries(serieRepository.seriesWithNextEp());
         newEpsAdaptor.notifyDataSetChanged();
+
+        if (newEpsAdaptor.getItemCount() == 0) {
+            no_next_eps.setVisibility(View.VISIBLE);
+            next_eps.setVisibility(View.GONE);
+        }
     }
 
     @Override
@@ -56,6 +63,7 @@ public class HomeFragment extends Fragment {
         next_eps = root.findViewById(R.id.home_recycler_new_eps);
         top_rated = root.findViewById(R.id.home_recycler_top_rated);
         popular = root.findViewById(R.id.home_recycler_popular);
+        no_next_eps = root.findViewById(R.id.home_no_next_eps_message);
 
         newEpsAdaptor = new NextEpsAdaptor(new ArrayList<Serie>());
         topAdaptor = new TopRelatedAdaptor();

@@ -57,4 +57,5 @@
     <string name="home_next_eps">Próximos Epsódios das suas Séries</string>
     <string name="home_populares">Populares ...</string>
     <string name="home_top_rated">Mais Bem Avaliadas ...</string>
+    <string name="without_series_with_next_eps">NENHUMA SERIE COM PROXIMOS EPSODIOS ;-;</string>
 </resources>

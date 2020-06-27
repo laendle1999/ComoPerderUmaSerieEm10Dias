@@ -1,4 +1,4 @@
-#Sat Jun 27 15:08:13 BRT 2020
+#Sat Jun 27 15:36:18 BRT 2020
 base.0=/Users/marcelo/Documents/Projetos/AndroidStudio/TrashTime/app/build/intermediates/dex/debug/mergeExtDexDebug/out/classes.dex
 path.1=classes.dex
 renamed.1=classes2.dex

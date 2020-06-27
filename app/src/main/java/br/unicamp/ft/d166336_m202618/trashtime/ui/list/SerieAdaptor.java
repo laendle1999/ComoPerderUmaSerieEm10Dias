@@ -23,6 +23,7 @@ public class SerieAdaptor extends RecyclerView.Adapter {
     private ArrayList<Serie> all_series;
     public SerieAdaptor(ArrayList<Serie> series) {
         this.list_series = series;
+        this.all_series = series;
     }
 
     @NonNull
@@ -62,6 +63,7 @@ public class SerieAdaptor extends RecyclerView.Adapter {
     }
 
     public void search (String words) {
+        Log.i("teste_serieAdaptor", "search");
         if (all_series == null) {
             all_series = list_series;
         }
@@ -78,6 +80,7 @@ public class SerieAdaptor extends RecyclerView.Adapter {
     }
 
     public void originalDataSet () {
+        Log.i("teste_serieAdaptor", "original data_set");
         list_series = all_series;
 
         notifyDataSetChanged();
@@ -99,6 +102,7 @@ public class SerieAdaptor extends RecyclerView.Adapter {
 
     public void setList_series(ArrayList<Serie> list_series) {
         this.list_series = list_series;
+        this.all_series = list_series;
     }
 
 

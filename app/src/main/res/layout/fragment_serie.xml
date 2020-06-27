@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/background"
     tools:context=".ui.list.SerieFragment">
 
     <LinearLayout
@@ -25,5 +26,18 @@
         android:layout_height="match_parent"
         android:id="@+id/recycler_view_serie"
         />
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:textSize="17dp"
+        android:textStyle="bold"
+        android:textColor="@color/colorPrimary"
+        android:visibility="gone"
+        android:id="@+id/series_no_series_message"
+        android:text="@string/without_series_with_next_eps"
+        android:layout_weight="1"/>
 
 </LinearLayout>

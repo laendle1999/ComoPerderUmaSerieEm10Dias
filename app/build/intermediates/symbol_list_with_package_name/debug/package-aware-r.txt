@@ -1670,6 +1670,7 @@ id groups
 id hideable
 id home
 id homeAsUp
+id home_no_next_eps_message
 id home_recycler_new_eps
 id home_recycler_popular
 id home_recycler_top_rated
@@ -1824,6 +1825,7 @@ id search_src_text
 id search_voice_btn
 id select_dialog_listview
 id selected
+id series_no_series_message
 id series_search
 id shortcut
 id showCustom
@@ -2226,6 +2228,7 @@ string quiz_title
 string search_menu_title
 string series_search_hint
 string status_bar_notification_info_overflow
+string without_series_with_next_eps
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light
 style Animation_AppCompat_Dialog
