@@ -797,6 +797,7 @@ color accent_material_dark
 color accent_material_light
 color androidx_core_ripple_material_light
 color androidx_core_secondary_text_default_material_light
+color background
 color background_floating_material_dark
 color background_floating_material_light
 color background_material_dark
@@ -1633,8 +1634,10 @@ id evalute_add_serie_layout
 id evalute_change_serie
 id evalute_fragment
 id evalute_image
+id evalute_image_layout
 id evalute_remove_serie
 id evalute_serie_name
+id evalute_serie_name_tranlated
 id evalute_serie_our_grade
 id evalute_serie_overview
 id evalute_serie_rating
@@ -1728,6 +1731,7 @@ id nav_quiz
 id nav_search
 id nav_series
 id nav_slideshow
+id nav_tranding
 id nav_view
 id navigation_header_container
 id never

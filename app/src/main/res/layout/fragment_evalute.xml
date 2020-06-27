@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
+    android:background="@color/background"
     tools:context=".ui.evaluate.EvaluteFragment">
+
 
     <!-- Imagem -->
     <LinearLayout
+        android:id="@+id/evalute_image_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -20,172 +22,185 @@
             android:id="@+id/evalute_image"
             android:layout_width="300dp"
             android:layout_height="300dp"
-            android:layout_marginRight="7dp"
             android:layout_marginLeft="3dp"
             android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            />
-    </LinearLayout>
-    <!-- Nome -->
-
-
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:cardCornerRadius="4dp"
-        android:layout_margin="10dp"
-
-        >
-        <ScrollView
-            xmlns:android="http://schemas.android.com/apk/res/android"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent">
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="5dp">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center">
-
-            <TextView
-                android:id="@+id/evalute_serie_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                />
-
-        </LinearLayout>
-
-        <!-- Sinopse -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center">
-
-            <TextView
-                android:id="@+id/evalute_serie_overview"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                />
-
-        </LinearLayout>
-
-        <!-- notas -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center">
-
-            <TextView
-                android:id="@+id/evalute_serie_tmdb_grade"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                />
-
-            <TextView
-                android:id="@+id/evalute_serie_our_grade"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                />
-
-        </LinearLayout>
-
-        <!-- avaliacao -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center">
-
-            <RatingBar
-                android:id="@+id/evalute_serie_rating"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                style="@style/ImageRatingBar"
-                android:progressDrawable="@drawable/trash_rating_display"
-                android:numStars="5"
-                android:stepSize="0.5"
-                android:isIndicator="false"
-                android:layout_gravity="center"
-                android:gravity="center"/>
-
-        </LinearLayout>
-
-        <!-- adicionar -->
-        <LinearLayout
-            android:id="@+id/evalute_add_serie_layout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center"
-            >
-
-            <Button
-                android:id="@+id/evalute_add_serie"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:text="@string/evalute_add_serie"
-                android:background="#6666ff"
-                android:textColor="#fff"
-                android:layout_marginTop="5dp"
-                />
-
-        </LinearLayout>
-
-        <!-- opções -->
-        <LinearLayout
-            android:id="@+id/evalute_update_serie_layout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:visibility="gone"
-            android:gravity="center">
-
-            <Button
-                android:id="@+id/evalute_change_serie"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:text="@string/evalute_change_serie"
-                android:background="#6666ff"
-                android:textColor="#fff"
-                android:layout_marginTop="5dp"
-                android:layout_marginRight="5dp"
-                tools:ignore="Suspicious0dp" />
-            <Button
-                android:id="@+id/evalute_remove_serie"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:text="@string/evalute_remove_serie"
-                android:background="#6666ff"
-                android:textColor="#fff"
-                android:layout_marginTop="5dp"
-                tools:ignore="Suspicious0dp" />
-
-        </LinearLayout>
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal"
-            android:id="@+id/recycler_view_recommendations"
-            android:layout_marginTop="0dp"
-            />
-
+            android:layout_marginRight="7dp"
+            android:layout_marginBottom="10dp" />
     </LinearLayout>
 
-        </ScrollView>
+    <ScrollView
 
-    </androidx.cardview.widget.CardView>
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignTop="@+id/evalute_image_layout"
+        android:layout_marginTop="207dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="100dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                app:cardCornerRadius="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="5dp">
+
+                    <!-- Nome -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/evalute_serie_name"
+                            android:textSize="25dp"
+                            android:textStyle="bold"
+                            android:textColor="@color/colorPrimary"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                        <TextView
+                            android:id="@+id/evalute_serie_name_tranlated"
+                            android:textSize="20dp"
+                            android:textStyle="bold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                    </LinearLayout>
+
+                    <!-- Sinopse -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/evalute_serie_overview"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                    </LinearLayout>
+
+                    <!-- notas -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/evalute_serie_tmdb_grade"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                        <TextView
+                            android:id="@+id/evalute_serie_our_grade"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                    </LinearLayout>
+
+                    <!-- avaliacao -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <RatingBar
+                            android:id="@+id/evalute_serie_rating"
+                            style="@style/ImageRatingBar"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:isIndicator="false"
+                            android:numStars="5"
+                            android:progressDrawable="@drawable/trash_rating_display"
+                            android:stepSize="0.5" />
+
+                    </LinearLayout>
+
+                    <!-- adicionar -->
+                    <LinearLayout
+                        android:id="@+id/evalute_add_serie_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/evalute_add_serie"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:layout_weight="1"
+                            android:background="#6666ff"
+                            android:text="@string/evalute_add_serie"
+                            android:textColor="#fff" />
+
+                    </LinearLayout>
+
+                    <!-- opções -->
+                    <LinearLayout
+                        android:id="@+id/evalute_update_serie_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+                        <Button
+                            android:id="@+id/evalute_change_serie"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginRight="5dp"
+                            android:layout_weight="1"
+                            android:background="#6666ff"
+                            android:text="@string/evalute_change_serie"
+                            android:textColor="#fff"
+                            tools:ignore="Suspicious0dp" />
+
+                        <Button
+                            android:id="@+id/evalute_remove_serie"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:layout_weight="1"
+                            android:background="#6666ff"
+                            android:text="@string/evalute_remove_serie"
+                            android:textColor="#fff"
+                            tools:ignore="Suspicious0dp" />
+
+                    </LinearLayout>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recycler_view_recommendations"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="0dp"
+                        android:orientation="horizontal" />
+
+                </LinearLayout>
 
 
-</LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</FrameLayout>

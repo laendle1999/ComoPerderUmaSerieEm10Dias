@@ -40,7 +40,7 @@ public class EvaluteFragment extends Fragment implements JsonReciver {
     private Serie serie;
     private SerieRepository serieRepository;
 
-    private TextView name, overview, tmdb_grade, our_grade;
+    private TextView name, overview, tmdb_grade, translate_name;
     private ImageView imageView;
     private RatingBar ratingBar;
 
@@ -105,7 +105,7 @@ public class EvaluteFragment extends Fragment implements JsonReciver {
         name = view.findViewById(R.id.evalute_serie_name);
         overview = view.findViewById(R.id.evalute_serie_overview);
         tmdb_grade = view.findViewById(R.id.evalute_serie_tmdb_grade);
-        our_grade = view.findViewById(R.id.evalute_serie_our_grade);
+        translate_name = view.findViewById(R.id.evalute_serie_name_tranlated);
         imageView = view.findViewById(R.id.evalute_image);
         ratingBar = view.findViewById(R.id.evalute_serie_rating);
 
@@ -219,7 +219,9 @@ public class EvaluteFragment extends Fragment implements JsonReciver {
 
             float grade = Float.parseFloat(jsonObject.getString("vote_average"));
 
-            String name = jsonObject.getString("name");
+            String name = jsonObject.getString("original_name");
+
+            String translate_name = jsonObject.getString("name");
 
             String image = jsonObject.getString("poster_path");
 
@@ -242,6 +244,8 @@ public class EvaluteFragment extends Fragment implements JsonReciver {
             this.overview.setText(overview);
 
             this.tmdb_grade.setText(String.valueOf(grade));
+
+            this.translate_name.setText(translate_name);
 
             Picasso.with(getContext()).load(serie.getFormattedImage()).into(imageView);
 

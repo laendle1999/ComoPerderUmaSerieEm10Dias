@@ -53,6 +53,13 @@
         android:name="br.unicamp.ft.d166336_m202618.trashtime.ui.list.SerieFragment"
         android:label="@string/menu_series"
         tools:layout="@layout/fragment_serie" />
+
+    <fragment
+        android:id="@+id/nav_tranding"
+        android:name="br.unicamp.ft.d166336_m202618.trashtime.ui.tranding.TrandingFragment"
+        android:label="@string/menu_tranding"
+        tools:layout="@layout/fragment_tranding" />
+
     <fragment
         android:id="@+id/nav_search"
         android:name="br.unicamp.ft.d166336_m202618.trashtime.ui.search.SearchFragment"
