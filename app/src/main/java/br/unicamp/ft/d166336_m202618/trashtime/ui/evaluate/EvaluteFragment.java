@@ -247,7 +247,7 @@ public class EvaluteFragment extends Fragment implements JsonReciver {
 
             this.translate_name.setText(translate_name);
 
-            Picasso.with(getContext()).load(serie.getFormattedImage()).into(imageView);
+            Picasso.with(getContext()).load(serie.getFormattedImage()).placeholder(R.drawable.image_default).into(imageView);
 
         } catch (JSONException e) {
             e.printStackTrace();

@@ -56,16 +56,20 @@
         "source": "/Users/marcelo/Documents/Projetos/AndroidStudio/TrashTime/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png"
     },
     {
-        "merged": "/Users/marcelo/Documents/Projetos/AndroidStudio/TrashTime/app/build/intermediates/res/merged/debug/drawable_ic_menu_camera.xml.flat",
-        "source": "/Users/marcelo/Documents/Projetos/AndroidStudio/TrashTime/app/src/main/res/drawable/ic_menu_camera.xml"
-    },
-    {
         "merged": "/Users/marcelo/Documents/Projetos/AndroidStudio/TrashTime/app/build/intermediates/res/merged/debug/layout_fragment_tranding.xml.flat",
         "source": "/Users/marcelo/Documents/Projetos/AndroidStudio/TrashTime/app/src/main/res/layout/fragment_tranding.xml"
     },
     {
+        "merged": "/Users/marcelo/Documents/Projetos/AndroidStudio/TrashTime/app/build/intermediates/res/merged/debug/drawable_ic_menu_camera.xml.flat",
+        "source": "/Users/marcelo/Documents/Projetos/AndroidStudio/TrashTime/app/src/main/res/drawable/ic_menu_camera.xml"
+    },
+    {
         "merged": "/Users/marcelo/Documents/Projetos/AndroidStudio/TrashTime/app/build/intermediates/res/merged/debug/drawable-xxhdpi_ic_list.png.flat",
         "source": "/Users/marcelo/Documents/Projetos/AndroidStudio/TrashTime/app/src/main/res/drawable-xxhdpi/ic_list.png"
+    },
+    {
+        "merged": "/Users/marcelo/Documents/Projetos/AndroidStudio/TrashTime/app/build/intermediates/res/merged/debug/drawable-xhdpi_loading.gif.flat",
+        "source": "/Users/marcelo/Documents/Projetos/AndroidStudio/TrashTime/app/src/main/res/drawable-xhdpi/loading.gif"
     },
     {
         "merged": "/Users/marcelo/Documents/Projetos/AndroidStudio/TrashTime/app/build/intermediates/res/merged/debug/drawable_ic_menu_gallery.xml.flat",

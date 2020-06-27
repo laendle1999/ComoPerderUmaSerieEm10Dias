@@ -379,7 +379,9 @@ attr fontStyle
 attr fontVariationSettings
 attr fontWeight
 attr foregroundInsidePadding
+attr freezesAnimation
 attr gapBetweenBars
+attr gifSource
 attr goIcon
 attr graph
 attr headerLayout
@@ -415,6 +417,7 @@ attr initialActivityCount
 attr insetForeground
 attr isLightTheme
 attr isMaterialTheme
+attr isOpaque
 attr itemBackground
 attr itemFillColor
 attr itemHorizontalPadding
@@ -526,6 +529,7 @@ attr listPreferredItemPaddingRight
 attr listPreferredItemPaddingStart
 attr logo
 attr logoDescription
+attr loopCount
 attr materialAlertDialogBodyTextStyle
 attr materialAlertDialogTheme
 attr materialAlertDialogTitleIconStyle
@@ -1467,6 +1471,7 @@ drawable ic_trash
 drawable ic_trashback
 drawable ic_unknow
 drawable image_default
+drawable loading
 drawable megafone
 drawable mentira
 drawable mtrl_dialog_background
@@ -1877,6 +1882,8 @@ id toolbar
 id top
 id topPanel
 id touch_outside
+id tranding_loading
+id tranding_webview
 id transition_current_scene
 id transition_layout_save
 id transition_position
@@ -2951,6 +2958,8 @@ styleable ForegroundLinearLayout android_foreground android_foregroundGravity fo
 styleable Fragment android_name android_id android_tag
 styleable FragmentContainerView android_name android_tag
 styleable FragmentNavigator android_name
+styleable GifTextureView gifSource isOpaque
+styleable GifView freezesAnimation loopCount
 styleable GradientColor android_startColor android_endColor android_type android_centerX android_centerY android_gradientRadius android_tileMode android_centerColor android_startX android_startY android_endX android_endY
 styleable GradientColorItem android_color android_offset
 styleable LinearConstraintLayout android_orientation

@@ -3,11 +3,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_gravity="center"
     tools:context=".ui.tranding.TrandingFragment">
 
-    <ImageView
+    <WebView
+        android:id="@+id/tranding_webview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/tela3"/>
+        android:visibility="gone"
+        />
+
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/tranding_loading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/loading"
+        android:layout_gravity="center"/>
 
 </FrameLayout>
